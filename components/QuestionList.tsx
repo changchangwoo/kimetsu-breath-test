@@ -11,6 +11,7 @@ interface QuestionListProps {
     options: {
       id: string;
       text: string;
+      weights: { [key: string]: number | undefined };
     }[];
   }[];
 }
