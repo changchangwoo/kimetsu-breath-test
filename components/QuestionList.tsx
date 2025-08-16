@@ -16,10 +16,14 @@ interface QuestionListProps {
   }[];
 }
 
+export type AnswersType = {
+  id : string | null;
+  weights: { [key: string]: number | undefined };
+}
+
 export default function QuestionList({ scripts }: QuestionListProps) {
   const [step, setStep] = useState(1);
-
-  const [answers, setAnswers] = useState<(string | null)[]>(
+  const [answers, setAnswers] = useState<AnswersType[]>(
     Array(scripts.length).fill(null)
   );
 
@@ -28,7 +32,10 @@ export default function QuestionList({ scripts }: QuestionListProps) {
 
   const handleSelectOption = (optionId: string) => {
     const newAnswers = [...answers];
-    newAnswers[step - 1] = optionId;
+    newAnswers[step - 1] = {
+      id: optionId,
+      weights: currentScript.options.find(option => option.id === optionId)?.weights || {}
+    };
     setAnswers(newAnswers);
     localStorage.setItem("answers", JSON.stringify(newAnswers));
   };
@@ -61,7 +68,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
             className={`h-10 flex items-center justify-center border 
               cursor-pointer transition-all
               ${
-                selectedOption === option.id
+                selectedOption?.id === option.id
                   ? "bg-orange-300 border-orange-500"
                   : "bg-amber-50 border-gray-300"
               }`}
@@ -82,7 +89,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
           이전
         </button>
         {step === scripts.length ? (
-          <PageMoveButton href="/result" title="제출하기" />
+          <PageMoveButton href="/result" title="제출하기" answers={answers} />
         ) : (
           <button
             className="px-4 py-2 bg-blue-300 rounded"
