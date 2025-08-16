@@ -89,7 +89,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
           이전
         </button>
         {step === scripts.length ? (
-          <PageMoveButton href="/result" title="제출하기" answers={answers} />
+          <PageMoveButton href="/results" title="제출하기" answers={answers} />
         ) : (
           <button
             className="px-4 py-2 bg-blue-300 rounded"
