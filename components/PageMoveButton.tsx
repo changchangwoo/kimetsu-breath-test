@@ -74,15 +74,3 @@ export default function PageMoveButton({
     </button>
   );
 }
-
-/*
-헌신 - 해
-열정 - 불, 사랑
-침착 - 물, 안개, 달
-공격 - 바람, 짐승
-신중 - 돌, 벌레
-결단 - 천둥
-협력 - 꽃
-창의 - 소리, 뱀
-
-*/

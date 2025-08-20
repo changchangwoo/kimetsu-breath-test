@@ -1,4 +1,3 @@
-// QuestionList.tsx - 메인 컨테이너
 "use client";
 
 import { useState } from "react";
@@ -71,8 +70,8 @@ export default function QuestionList({ scripts }: QuestionListProps) {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="w-full max-w-2xl">
+    <div className="w-screen h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
+      <div className="w-full h-full">
         <ProgressBar step={step} maxStep={scripts.length} />
 
         <AnimatePresence mode="wait" initial={false}>

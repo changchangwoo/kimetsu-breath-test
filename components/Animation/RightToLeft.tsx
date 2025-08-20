@@ -6,27 +6,28 @@ interface IProps {
   children: ReactNode;
   delay: number;
 }
-export default function BottomUp({ children, delay }: IProps) {
+export default function RightToLeft({ children, delay }: IProps) {
   const itemVariants = {
     initial: {
       opacity: 0,
-      y: 100,
+      x: 300,
     },
     animate: {
       opacity: 1,
-      y: 0,
+      x: 0,
       transition: {
-        duration: 1.5,
+        duration: 0.7,
         delay: delay,
-        ease: [0.7, 0, 0.3, 1] as const,
+        ease: [0.8, 0, 0.2, 1] as const,
       },
     },
     exit: {
       opacity: 0,
-      y: -20,
+      x: -300,
       transition: {
-        duration: 1,
-        ease: [0.7, 0, 0.3, 1] as const,
+        duration: 0.5,
+        ease: [0.8, 0, 0.2, 1] as const,
+        delay: delay,
       },
     },
   };
