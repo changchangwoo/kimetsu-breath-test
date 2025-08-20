@@ -11,7 +11,7 @@ interface PageProps {
 }
 
 export default async function ResultPage(props: PageProps) {
-  const { id } = await props.params;
+  const { id } = props.params;
 
   let result: ResultData | null = null;
 
