@@ -31,6 +31,7 @@ export default function RightToLeft({ children, delay }: IProps) {
       },
     },
   };
+
   return (
     <>
       <motion.div

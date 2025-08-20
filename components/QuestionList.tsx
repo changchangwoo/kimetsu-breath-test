@@ -52,20 +52,16 @@ export default function QuestionList({ scripts }: QuestionListProps) {
 
     if (step < scripts.length) {
       setIsTransitioning(true);
-      setTimeout(() => {
-        setStep(step + 1);
-        setIsTransitioning(false);
-      }, 300);
+      setStep(step + 1);
+      setIsTransitioning(false);
     }
   };
 
   const handlePrevButton = async () => {
     if (step > 1) {
       setIsTransitioning(true);
-      setTimeout(() => {
-        setStep(step - 1);
-        setIsTransitioning(false);
-      }, 300);
+      setStep(step - 1);
+      setIsTransitioning(false);
     }
   };
 

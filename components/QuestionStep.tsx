@@ -1,8 +1,6 @@
 "use client";
 
-import { motion, scale } from "motion/react";
-import BottomUp from "./Animation/BottomUp";
-import RightToLeft from "./Animation/RightToLeft";
+import RightToLeft from "../Animation/RightToLeft";
 
 interface QuestionStepProps {
   script: {

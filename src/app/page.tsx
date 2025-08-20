@@ -1,4 +1,4 @@
-import BottomUp from "../../components/Animation/BottomUp";
+import BottomUp from "../../Animation/BottomUp";
 import PageMoveButton from "../../components/PageMoveButton";
 
 export default function Home() {
