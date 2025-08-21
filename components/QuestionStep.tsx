@@ -14,26 +14,32 @@ interface QuestionStepProps {
   };
   selectedOption: string | null;
   onSelectOption: (optionId: string) => void;
+  isAnimation?: boolean;
 }
 
 const QuestionStep = ({
   script,
   selectedOption,
   onSelectOption,
+  isAnimation = true,
 }: QuestionStepProps) => {
   return (
     <div className="flex flex-col gap-5 mt-10">
-      <RightToLeft delay={0}>
+      <RightToLeft isAnimation={isAnimation} delay={0}>
         <h1 className="text-center">{script.question}</h1>
       </RightToLeft>
 
-      <RightToLeft delay={0.1}>
+      <RightToLeft isAnimation={isAnimation} delay={0.1}>
         <div className="w-full h-30 bg-amber-300"></div>
       </RightToLeft>
 
-      <ul className="w-full  p-5 flex flex-col gap-3 ">
+      <ul className="w-full p-5 flex flex-col gap-3 ">
         {script.options.map((option, idx) => (
-          <RightToLeft delay={0.2 + 0.1 * idx} key={option.id}>
+          <RightToLeft
+            isAnimation={isAnimation}
+            delay={0.2 + 0.05 * idx}
+            key={option.id}
+          >
             <li
               key={option.id}
               className={`h-10 flex items-center justify-center border rounded-md

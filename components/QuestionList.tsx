@@ -28,6 +28,10 @@ export default function QuestionList({ scripts }: QuestionListProps) {
   const [answers, setAnswers] = useState<AnswersType[]>(
     Array(scripts.length).fill(null)
   );
+  const [visited, setVisited] = useState<Boolean[]>(
+    Array(scripts.length).fill(false)
+  );
+
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   const currentScript = scripts[step - 1];
@@ -44,7 +48,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
     setAnswers(newAnswers);
   };
 
-  const handleNextButton = async () => {
+  const handleNextButton = () => {
     if (!selectedOption) {
       alert("옵션을 선택하세요!");
       return;
@@ -52,7 +56,17 @@ export default function QuestionList({ scripts }: QuestionListProps) {
 
     if (step < scripts.length) {
       setIsTransitioning(true);
-      setStep(step + 1);
+      setStep((prevStep) => {
+        const nextStep = prevStep + 1;
+
+        setVisited((prevVisited) => {
+          const newVisited = [...prevVisited];
+          newVisited[prevStep] = true;
+          return newVisited;
+        });
+
+        return nextStep;
+      });
       setIsTransitioning(false);
     }
   };
@@ -69,15 +83,24 @@ export default function QuestionList({ scripts }: QuestionListProps) {
     <div className="w-screen h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="w-full h-full">
         <ProgressBar step={step} maxStep={scripts.length} />
-
-        <AnimatePresence mode="wait" initial={false}>
+        {visited[step] === false ? (
+          <AnimatePresence mode="wait">
+            <QuestionStep
+              key={step}
+              script={currentScript}
+              selectedOption={selectedOption?.id || null}
+              onSelectOption={handleSelectOption}
+            />
+          </AnimatePresence>
+        ) : (
           <QuestionStep
             key={step}
             script={currentScript}
             selectedOption={selectedOption?.id || null}
             onSelectOption={handleSelectOption}
+            isAnimation={false}
           />
-        </AnimatePresence>
+        )}
 
         <div className="flex justify-center gap-4 mt-8">
           <button
@@ -113,7 +136,3 @@ export default function QuestionList({ scripts }: QuestionListProps) {
     </div>
   );
 }
-
-/*
-
-*/

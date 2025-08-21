@@ -1,4 +1,4 @@
-export default function QuizLayout({
+export default function ResultLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;

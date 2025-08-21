@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { AnswersType } from "./QuestionList";
+import { Tweights } from "../models/types";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -10,16 +11,6 @@ interface PageMoveButtonProps {
   title: string;
   answers?: AnswersType[];
 }
-
-type Tweights =
-  | "침착"
-  | "협력"
-  | "신중"
-  | "공격"
-  | "헌신"
-  | "결단"
-  | "창의"
-  | "열정";
 
 export default function PageMoveButton({
   href,
@@ -58,8 +49,9 @@ export default function PageMoveButton({
           body: JSON.stringify({ weights }),
         });
         const result = await response.json();
-        const id = result.id as string;
-        newHref = `/results/${id}`;
+        const type = result.type as string;
+        newHref = `/results/${type}`;
+        localStorage.setItem("weights", JSON.stringify(weights));
       } catch (err) {
         console.error("API 요청 실패:", err);
       }

@@ -10,7 +10,7 @@ interface PageProps {
   params: { id: string };
 }
 
-export default async function ResultPage(props: PageProps) {
+export default async function SharePage(props: PageProps) {
   const { id } = props.params;
 
   let result: ResultData | null = null;
