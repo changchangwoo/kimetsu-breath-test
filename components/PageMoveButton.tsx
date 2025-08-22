@@ -58,8 +58,10 @@ export default function PageMoveButton({
           body: JSON.stringify({ weights }),
         });
         const result = await response.json();
-        const id = result.id as string;
-        newHref = `/results/${id}`;
+        const type = result.type as string;
+        console.log(type)
+        newHref = `/results/${type}`;
+        localStorage.setItem('weights', JSON.stringify(weights));
       } catch (err) {
         console.error("API 요청 실패:", err);
       }

@@ -44,6 +44,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
     setAnswers(newAnswers);
   };
 
+
   const handleNextButton = async () => {
     if (!selectedOption) {
       alert("옵션을 선택하세요!");
@@ -52,7 +53,10 @@ export default function QuestionList({ scripts }: QuestionListProps) {
 
     if (step < scripts.length) {
       setIsTransitioning(true);
-      setStep(step + 1);
+      setStep((prevStep) => {
+        const newStep = prevStep + 1;
+        return newStep;
+      });
       setIsTransitioning(false);
     }
   };
@@ -60,7 +64,10 @@ export default function QuestionList({ scripts }: QuestionListProps) {
   const handlePrevButton = async () => {
     if (step > 1) {
       setIsTransitioning(true);
-      setStep(step - 1);
+      setStep((prevStep) => {
+        const newStep = prevStep - 1;
+        return newStep;
+      });
       setIsTransitioning(false);
     }
   };
@@ -69,7 +76,6 @@ export default function QuestionList({ scripts }: QuestionListProps) {
     <div className="w-screen h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
       <div className="w-full h-full">
         <ProgressBar step={step} maxStep={scripts.length} />
-
         <AnimatePresence mode="wait" initial={false}>
           <QuestionStep
             key={step}
@@ -113,7 +119,3 @@ export default function QuestionList({ scripts }: QuestionListProps) {
     </div>
   );
 }
-
-/*
-
-*/
