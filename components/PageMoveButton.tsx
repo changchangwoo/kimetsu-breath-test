@@ -9,6 +9,8 @@ interface PageMoveButtonProps {
   href: "" | "/quiz" | "/results" | `/results/${string}`;
   title: string;
   answers?: AnswersType[];
+  className?: string;
+
 }
 
 type Tweights =
@@ -25,6 +27,7 @@ export default function PageMoveButton({
   href,
   title,
   answers,
+  className,
 }: PageMoveButtonProps) {
   const router = useRouter();
 
@@ -71,7 +74,7 @@ export default function PageMoveButton({
   };
 
   return (
-    <button onClick={handleClick} className="w-30 h-10 bg-orange-300">
+    <button onClick={handleClick} className={`border border-border text-white font-nanumB w-[243px] h-12 rounded-xl bg-lightGray/20 ${className}`}>
       {title}
     </button>
   );
