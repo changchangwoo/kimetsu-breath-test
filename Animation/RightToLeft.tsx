@@ -1,6 +1,6 @@
 "use client";
-import { motion, scale } from "motion/react";
-import { ReactNode, useEffect, useState } from "react";
+import { motion } from "motion/react";
+import { ReactNode } from "react";
 
 interface IProps {
   children: ReactNode;
@@ -34,7 +34,6 @@ export default function RightToLeft({ children, delay }: IProps) {
   };
 
   return (
-    <>
       <motion.div
         className="w-full h-auto"
         variants={itemVariants}
@@ -44,6 +43,5 @@ export default function RightToLeft({ children, delay }: IProps) {
       >
         {children}
       </motion.div>
-    </>
   );
 }

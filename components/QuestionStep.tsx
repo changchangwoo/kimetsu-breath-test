@@ -39,13 +39,13 @@ const QuestionStep = ({
 
   return (
     <div className="flex flex-col">
-      <RightToLeft delay={0}>
+      <RightToLeft delay={0.2}>
         <h1 className="text-center text-white font-shilla text-large whitespace-pre-line mb-10">
           {script.question}
         </h1>
       </RightToLeft>
 
-      <RightToLeft delay={0.1}>
+      <RightToLeft delay={0.3}>
         <div className="w-full h-48 aspect-video rounded-2xl relative overflow-hidden mb-10">
           <Image
             src={`/imgs/q${script.id}.jpg`}
@@ -59,7 +59,7 @@ const QuestionStep = ({
 
       <ul className="flex flex-col gap-3">
         {script.options.map((option, idx) => (
-          <RightToLeft delay={0.2 + 0.1 * idx} key={option.id}>
+          <RightToLeft delay={0.3 + 0.1 * idx} key={option.id}>
             <SelectedItem 
               isSelected={selectedId === option.id}
               hasAnySelection={selectedId !== null}
@@ -71,7 +71,7 @@ const QuestionStep = ({
                 className={`flex items-center justify-center border rounded-2xl
                 cursor-pointer transition-all hover:scale-105 font-nanumB text-center
                  text-white py-2 whitespace-pre-line text-descript
-                 bg-lightGray/20 border-borde
+                 bg-lightGray/20 border-border/50
                 `}
                 onClick={() => handleOptionClick(option.id)}
               >

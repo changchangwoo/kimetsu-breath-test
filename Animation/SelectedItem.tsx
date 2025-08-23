@@ -9,13 +9,15 @@ interface IProps {
   onSelectAnimationComplete?: () => void;
 }
 
-export default function SelectedItem({ 
-  children, 
-  isSelected, 
+export default function SelectedItem({
+  children,
+  isSelected,
   hasAnySelection = false,
-  onSelectAnimationComplete 
+  onSelectAnimationComplete,
 }: IProps) {
-  const [animationState, setAnimationState] = useState<"initial" | "selected" | "deselected">("initial");
+  const [animationState, setAnimationState] = useState<
+    "initial" | "selected" | "deselected"
+  >("initial");
 
   const itemVariants = {
     initial: {
@@ -56,7 +58,9 @@ export default function SelectedItem({
 
   return (
     <motion.div
-      className="w-full h-auto"
+      className={`w-full h-auto ${
+        animationState !== "initial" && "pointer-events-none"
+      }`}
       variants={itemVariants}
       initial="initial"
       animate={animationState}

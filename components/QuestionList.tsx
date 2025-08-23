@@ -2,9 +2,9 @@
 
 import { useState } from "react";
 import { AnimatePresence } from "motion/react";
-import ProgressBar from "./ProgressBar";
 import PageMoveButton from "./PageMoveButton";
 import QuestionStep from "./QuestionStep";
+import { ProgressBar } from "./ProgressBar";
 
 interface QuestionListProps {
   scripts: {

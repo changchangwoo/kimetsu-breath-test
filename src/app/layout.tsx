@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import PageTransition from "../../Animation/PageTransition";
+import { PageTransitionProvider } from "../../contexts/PageTransitionContext";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,9 +14,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-[url('../../public/imgs/bg.png')] bg-cover bg-center px-5
-      ">{children}</body>
+    <html lang="ko">
+      <body className="bg-[url('../../public/imgs/bg.png')] bg-cover bg-center px-5">
+        <PageTransitionProvider>
+          {children}
+        </PageTransitionProvider>
+      </body>
     </html>
   );
 }

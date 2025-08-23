@@ -1,18 +1,37 @@
 "use client";
 
-import { AnimatePresence, motion } from "framer-motion";
-import { usePathname } from "next/navigation";
+import { motion } from "framer-motion";
+import { usePageTransition } from "../contexts/PageTransitionContext";
 
 export default function PageTransition({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const pathname = usePathname();
+  const { isTransitioning }= usePageTransition();
+  const itemVariants = {
+    initial: {
+      opacity: 1,
+    },
+    exit: {
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.8, 0, 0.2, 1] as const,
+      },
+    },
+  };
 
   return (
-    <AnimatePresence mode="wait">
-      <motion.div key={pathname}>{children}</motion.div>
-    </AnimatePresence>
+    <>
+    <motion.div
+      className="w-full h-auto"
+      variants={itemVariants}
+      initial="initial"
+      animate={isTransitioning ? "exit" : "initial"}
+    >
+      {children}
+    </motion.div>
+    </>
   );
 }

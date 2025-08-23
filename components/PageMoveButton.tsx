@@ -2,6 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { AnswersType } from "./QuestionList";
+import { usePageTransition } from "../contexts/PageTransitionContext";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
@@ -10,7 +11,6 @@ interface PageMoveButtonProps {
   title: string;
   answers?: AnswersType[];
   className?: string;
-
 }
 
 type Tweights =
@@ -30,6 +30,7 @@ export default function PageMoveButton({
   className,
 }: PageMoveButtonProps) {
   const router = useRouter();
+  const { triggerTransition } = usePageTransition();
 
   const handleClick = async () => {
     let newHref = href;
@@ -62,19 +63,25 @@ export default function PageMoveButton({
         });
         const result = await response.json();
         const type = result.type as string;
-        console.log(type)
+        console.log(type);
         newHref = `/results/${type}`;
-        localStorage.setItem('weights', JSON.stringify(weights));
+        localStorage.setItem("weights", JSON.stringify(weights));
       } catch (err) {
         console.error("API 요청 실패:", err);
       }
     }
 
-    router.push(newHref);
+    triggerTransition(() => {
+      router.push(newHref);
+    });
+    
   };
 
   return (
-    <button onClick={handleClick} className={`border border-border text-white font-nanumB w-[243px] h-12 rounded-xl bg-lightGray/20 ${className}`}>
+    <button
+      onClick={handleClick}
+      className={`border border-border text-white font-nanumB w-[243px] h-12 rounded-xl bg-lightGray/20 ${className}`}
+    >
       {title}
     </button>
   );

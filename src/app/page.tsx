@@ -1,4 +1,5 @@
 import BottomUp from "../../Animation/BottomUp";
+import PageTransition from "../../Animation/PageTransition";
 import PageMoveButton from "../../components/PageMoveButton";
 
 export default function Home() {
@@ -6,6 +7,7 @@ export default function Home() {
   const step = 0.05;
 
   return (
+    <PageTransition>
     <div className="
     py-20 
     h-dvh flex flex-col text-center items-center">
@@ -34,7 +36,6 @@ export default function Home() {
           <button className="bg-lightGray w-9 h-9 rounded-full border border-border"></button>
           <button className="bg-lightGray w-9 h-9 rounded-full border border-border"></button>
         </div>
-        {/* 추후 공유하기 로직 추가 */}
       </BottomUp>      
       
       <BottomUp delay={(delay += step)}>
@@ -44,5 +45,6 @@ export default function Home() {
         </h3>
       </BottomUp>
     </div>
+    </PageTransition>
   );
 }
