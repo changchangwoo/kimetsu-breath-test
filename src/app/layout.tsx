@@ -13,7 +13,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="bg-[url('../../public/imgs/bg.png')] bg-cover bg-center px-5
+      ">{children}</body>
     </html>
   );
 }

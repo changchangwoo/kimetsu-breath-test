@@ -7,12 +7,8 @@ export default function Home() {
 
   return (
     <div className="
-    pt-20
-    pb-20
-    pl-5
-    pr-5
-    h-dvh flex flex-col text-center items-center
-    bg-[url('../../public/imgs/bg.png')] bg-cover bg-center">
+    py-20 
+    h-dvh flex flex-col text-center items-center">
       <BottomUp delay={delay}>
         <h1 className="mb-10 text-title font-shilla text-lightGray">나는 어떤<br/> 호흡 계승자일까?</h1>
       </BottomUp>

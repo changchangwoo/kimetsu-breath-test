@@ -1,6 +1,6 @@
 "use client";
-import { motion } from "motion/react";
-import { ReactNode } from "react";
+import { motion, scale } from "motion/react";
+import { ReactNode, useEffect, useState } from "react";
 
 interface IProps {
   children: ReactNode;
@@ -12,6 +12,7 @@ export default function RightToLeft({ children, delay }: IProps) {
       opacity: 0,
       x: 300,
     },
+
     animate: {
       opacity: 1,
       x: 0,

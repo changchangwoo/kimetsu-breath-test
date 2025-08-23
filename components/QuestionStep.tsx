@@ -1,6 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import RightToLeft from "../Animation/RightToLeft";
+import SelectedItem from "../Animation/SelectedItem";
+import { useState } from "react";
 
 interface QuestionStepProps {
   script: {
@@ -12,41 +15,69 @@ interface QuestionStepProps {
       weights: { [key: string]: number | undefined };
     }[];
   };
-  selectedOption: string | null;
   onSelectOption: (optionId: string) => void;
+  handleNextButton: () => void;
 }
 
 const QuestionStep = ({
   script,
-  selectedOption,
   onSelectOption,
+  handleNextButton,
 }: QuestionStepProps) => {
+  const [selectedId, setSelectedId] = useState<string | null>(null);
+
+  const handleOptionClick = (optionId: string) => {
+    setSelectedId(optionId);
+    onSelectOption(optionId);
+  };
+
+  const handleSelectAnimationComplete = () => {
+    setTimeout(() => {
+      handleNextButton();
+    }, 200);
+  };
+
   return (
-    <div className="flex flex-col gap-5 mt-10">
+    <div className="flex flex-col">
       <RightToLeft delay={0}>
-        <h1 className="text-center">{script.question}</h1>
+        <h1 className="text-center text-white font-shilla text-large whitespace-pre-line mb-10">
+          {script.question}
+        </h1>
       </RightToLeft>
 
       <RightToLeft delay={0.1}>
-        <div className="w-full h-30 bg-amber-300"></div>
+        <div className="w-full h-48 aspect-video rounded-2xl relative overflow-hidden mb-10">
+          <Image
+            src={`/imgs/q${script.id}.jpg`}
+            alt={`질문 ${script.id} 배경 이미지`}
+            fill
+            className="object-cover relative"
+            priority
+          />
+        </div>
       </RightToLeft>
 
-      <ul className="w-full  p-5 flex flex-col gap-3 ">
+      <ul className="flex flex-col gap-3">
         {script.options.map((option, idx) => (
           <RightToLeft delay={0.2 + 0.1 * idx} key={option.id}>
-            <li
-              key={option.id}
-              className={`h-10 flex items-center justify-center border rounded-md
-              cursor-pointer transition-all hover:scale-105
-              ${
-                selectedOption === option.id
-                  ? "bg-orange-300 border-orange-500 shadow-md"
-                  : "bg-amber-50 border-gray-300 hover:bg-amber-100"
-              }`}
-              onClick={() => onSelectOption(option.id)}
+            <SelectedItem 
+              isSelected={selectedId === option.id}
+              hasAnySelection={selectedId !== null}
+              onSelectAnimationComplete={
+                selectedId === option.id ? handleSelectAnimationComplete : undefined
+              }
             >
-              {option.text}
-            </li>
+              <li
+                className={`flex items-center justify-center border rounded-2xl
+                cursor-pointer transition-all hover:scale-105 font-nanumB text-center
+                 text-white py-2 whitespace-pre-line text-descript
+                 bg-lightGray/20 border-borde
+                `}
+                onClick={() => handleOptionClick(option.id)}
+              >
+                {option.text}
+              </li>
+            </SelectedItem>
           </RightToLeft>
         ))}
       </ul>

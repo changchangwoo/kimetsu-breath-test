@@ -28,10 +28,8 @@ export default function QuestionList({ scripts }: QuestionListProps) {
   const [answers, setAnswers] = useState<AnswersType[]>(
     Array(scripts.length).fill(null)
   );
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const currentScript = scripts[step - 1];
-  const selectedOption = answers[step - 1];
 
   const handleSelectOption = (optionId: string) => {
     const newAnswers = [...answers];
@@ -46,76 +44,35 @@ export default function QuestionList({ scripts }: QuestionListProps) {
 
 
   const handleNextButton = async () => {
-    if (!selectedOption) {
-      alert("옵션을 선택하세요!");
-      return;
-    }
-
     if (step < scripts.length) {
-      setIsTransitioning(true);
       setStep((prevStep) => {
         const newStep = prevStep + 1;
         return newStep;
       });
-      setIsTransitioning(false);
     }
   };
 
   const handlePrevButton = async () => {
     if (step > 1) {
-      setIsTransitioning(true);
       setStep((prevStep) => {
         const newStep = prevStep - 1;
         return newStep;
       });
-      setIsTransitioning(false);
     }
   };
 
   return (
-    <div className="w-screen h-screen flex flex-col items-center justify-center p-4 bg-gradient-to-br from-blue-50 to-indigo-100">
-      <div className="w-full h-full">
+    <div className="w-full h-screen flex flex-col items-center py-10 ">
         <ProgressBar step={step} maxStep={scripts.length} />
-        <AnimatePresence mode="wait" initial={false}>
+        
+        <AnimatePresence mode="wait">
           <QuestionStep
             key={step}
             script={currentScript}
-            selectedOption={selectedOption?.id || null}
             onSelectOption={handleSelectOption}
+            handleNextButton={handleNextButton}
           />
         </AnimatePresence>
-
-        <div className="flex justify-center gap-4 mt-8">
-          <button
-            className={`px-6 py-3 rounded-lg font-medium transition-all
-              ${
-                step === 1
-                  ? "bg-gray-200 text-gray-400 cursor-not-allowed"
-                  : "bg-blue-200 hover:bg-blue-300 text-blue-800"
-              }`}
-            onClick={handlePrevButton}
-            disabled={step === 1 || isTransitioning}
-          >
-            이전
-          </button>
-
-          {step === scripts.length ? (
-            <PageMoveButton
-              href="/results"
-              title="제출하기"
-              answers={answers}
-            />
-          ) : (
-            <button
-              className="px-6 py-3 bg-blue-500 hover:bg-blue-600 text-white rounded-lg font-medium transition-all disabled:opacity-50"
-              onClick={handleNextButton}
-              disabled={isTransitioning}
-            >
-              다음
-            </button>
-          )}
-        </div>
-      </div>
     </div>
   );
 }
