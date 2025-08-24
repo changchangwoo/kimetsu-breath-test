@@ -64,7 +64,6 @@ export default function QuestionList({ scripts }: QuestionListProps) {
   return (
     <div className="w-full h-screen flex flex-col items-center py-10 ">
         <ProgressBar step={step} maxStep={scripts.length} />
-        
         <AnimatePresence mode="wait">
           <QuestionStep
             key={step}

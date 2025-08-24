@@ -9,6 +9,7 @@ export default function Home() {
   return (
     <PageTransition>
     <div className="
+    px-5
     py-20 
     h-dvh flex flex-col text-center items-center">
       <BottomUp delay={delay}>

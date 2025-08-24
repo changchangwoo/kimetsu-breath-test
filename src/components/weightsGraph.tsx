@@ -8,5 +8,10 @@ export default function WeightGraph() {
 
   console.log(weights);
 
-  return <></>;
+  return <>
+  <div className="w-[60%] bg-amber-50">
+    
+  </div>
+  
+  </>;
 }

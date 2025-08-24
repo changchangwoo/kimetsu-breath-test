@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="bg-[url('../../public/imgs/bg.png')] bg-cover bg-center px-5">
+      <body className="bg-[url('../../public/imgs/bg.png')] bg-cover bg-center ">
 <Script
   src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
   type="module"

@@ -4,6 +4,7 @@ import { TresultType } from "@/models/type";
 import { breathingColors, breathingNames } from "@/constants/breathingColors";
 import Image from "next/image";
 import WeightGraph from "@/components/weightsGraph";
+import { ResultDeiscription, ResultHeader, ResultKeywords } from "@/components/ResultContents";
 
 interface PageProps {
   params: { type: TresultType };
@@ -36,12 +37,13 @@ export default async function ResultPage({ params }: PageProps) {
   const { type } = await params;
   const breathingColor = breathingColors[type];
   const breathingName = breathingNames[type];
-
   return (
     <main>
-      <WeightGraph />
-      <div id="section-01" className="w-full h-dvh flex flex-col items-center">
-        <h2 className="mt-32 font-shilla text-lightGray text-extralLarge">
+      <div
+        id="section-01"
+        className="w-full h-dvh flex flex-col items-center px-5"
+      >
+        <h2 className="mt-32 font-shilla text-lightGray text-extraLarge">
           내가 계승한 호흡은..
         </h2>
         <h1
@@ -73,11 +75,24 @@ export default async function ResultPage({ params }: PageProps) {
           />
         </div>
       </div>
-      {/* <div
+      <div
         id="section-02"
-        style={{ backgroundColor: `${breathingColor}20` }} // 20% 투명도
+        className="w-full h-auto pt-10"
+        style={{ backgroundColor: `${breathingColor}` }} // HEX 뒤에 16진수 alpha
       >
-      </div> */}
+        <ResultHeader breathingName={breathingName} />
+        <ResultDeiscription />
+        <ResultKeywords/>
+
+
+                <div className="bg-white/30 w-full h-[300px] flex flex-col items-center">
+          <h1 className="text-white font-shilla text-extraLarge mb-5">키워드</h1>
+          <div className="px-5 flex gap-2 flex-wrap justify-center">
+          </div>
+        </div>
+
+
+      </div>
     </main>
   );
 }

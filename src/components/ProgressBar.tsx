@@ -10,7 +10,7 @@ interface ProgressBarProps {
 
 export function ProgressBar({ step, maxStep }: ProgressBarProps) {
   return (
-    <div className="flex flex-col items-center gap-2 w-[80%] mb-5">
+    <div className="flex flex-col items-center gap-2 w-[80%] mb-5 px-5">
       <ScaleUp step={step}>
         <h1 className="font-shilla text-large text-lightGray text-center">
           Q{step}.
