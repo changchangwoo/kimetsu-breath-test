@@ -4,7 +4,7 @@ import { TresultType } from "@/models/type";
 import { breathingColors, breathingNames } from "@/constants/breathingColors";
 import Image from "next/image";
 import WeightGraph from "@/components/weightsGraph";
-import { ResultDeiscription, ResultHeader, ResultKeywords } from "@/components/ResultContents";
+import { ResultDeiscription, ResultHeader, ResultKeywords, ResultSuccessor } from "@/components/ResultContents";
 
 interface PageProps {
   params: { type: TresultType };
@@ -83,13 +83,7 @@ export default async function ResultPage({ params }: PageProps) {
         <ResultHeader breathingName={breathingName} />
         <ResultDeiscription />
         <ResultKeywords/>
-
-
-                <div className="bg-white/30 w-full h-[300px] flex flex-col items-center">
-          <h1 className="text-white font-shilla text-extraLarge mb-5">키워드</h1>
-          <div className="px-5 flex gap-2 flex-wrap justify-center">
-          </div>
-        </div>
+        <ResultSuccessor/>
 
 
       </div>

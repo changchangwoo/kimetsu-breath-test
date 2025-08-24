@@ -69,3 +69,13 @@ export function ResultKeywords() {
         </div>
   )
 }
+
+export function ResultSuccessor() {
+  return (
+        <div className="bg-white/30 w-full h-[300px] flex flex-col items-center">
+          <h1 className="text-white font-shilla text-extraLarge mb-5">키워드</h1>
+          <div className="px-5 flex gap-2 flex-wrap justify-center">
+          </div>
+        </div>
+  )
+}
