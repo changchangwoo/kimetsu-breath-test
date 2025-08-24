@@ -13,7 +13,7 @@ export default function RightToLeft({ children, delay }: IProps) {
       x: 300,
     },
 
-    animate: {
+  animate: {
       opacity: 1,
       x: 0,
       transition: {

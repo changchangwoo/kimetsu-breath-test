@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 import { AnswersType } from "./QuestionList";
-import { usePageTransition } from "../contexts/PageTransitionContext";
+import { usePageTransition } from "@/contexts/PageTransitionContext";
 
 const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 

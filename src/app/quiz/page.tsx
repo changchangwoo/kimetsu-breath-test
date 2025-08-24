@@ -1,5 +1,5 @@
-import QuestionList from "../../../components/QuestionList";
-import scripts from "../../../data/script.json";
+import QuestionList from "@/components/QuestionList";
+import scripts from "@/data/script.json";
 
 export default function Test() {
   return (

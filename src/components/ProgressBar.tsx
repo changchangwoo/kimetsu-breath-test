@@ -1,7 +1,7 @@
 "use client";
 
-import Progress from "../Animation/Progress";
-import ScaleUp from "../Animation/ScaleUp";
+import Progress from "@/animation/Progress";
+import ScaleUp from "@/animation/ScaleUp";
 
 interface ProgressBarProps {
   step: number;

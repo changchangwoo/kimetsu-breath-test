@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { usePageTransition } from "../contexts/PageTransitionContext";
+import { usePageTransition } from "@/contexts/PageTransitionContext";
 
 export default function PageTransition({
   children,

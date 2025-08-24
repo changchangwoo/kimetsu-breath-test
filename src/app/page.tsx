@@ -1,6 +1,6 @@
-import BottomUp from "../../Animation/BottomUp";
-import PageTransition from "../../Animation/PageTransition";
-import PageMoveButton from "../../components/PageMoveButton";
+import PageMoveButton from "@/components/PageMoveButton";
+import BottomUp from "@/animation/BottomUp";
+import PageTransition from "@/animation/PageTransition";
 
 export default function Home() {
   let delay = 0.05;

@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import RightToLeft from "../Animation/RightToLeft";
-import SelectedItem from "../Animation/SelectedItem";
+import RightToLeft from "../animation/RightToLeft";
+import SelectedItem from "../animation/SelectedItem";
 import { useState } from "react";
 
 interface QuestionStepProps {
