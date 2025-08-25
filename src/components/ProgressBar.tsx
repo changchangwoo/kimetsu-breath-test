@@ -17,7 +17,11 @@ export function ProgressBar({ step, maxStep }: ProgressBarProps) {
         </h1>
       </ScaleUp>
       <ScaleUp step={step}>
-        <Progress step={step} maxStep={maxStep} percentage={step === 1 ? 0 : (step / maxStep) * 100}>
+        <Progress
+          step={step}
+          maxStep={maxStep}
+          percentage={((step - 1) / (maxStep - 1)) * 100}
+        >
           <div className="w-full h-5 bg-gray/30 flex items-center justify-center rounded-2xl border-border/40 border overflow-hidden" />
         </Progress>
       </ScaleUp>

@@ -59,12 +59,14 @@ const QuestionStep = ({
 
       <ul className="flex flex-col gap-3">
         {script.options.map((option, idx) => (
-          <RightToLeft delay={0.3 + 0.1 * idx} key={option.id}>
-            <SelectedItem 
+          <RightToLeft delay={0.3 + 0.05 * idx} key={option.id}>
+            <SelectedItem
               isSelected={selectedId === option.id}
               hasAnySelection={selectedId !== null}
               onSelectAnimationComplete={
-                selectedId === option.id ? handleSelectAnimationComplete : undefined
+                selectedId === option.id
+                  ? handleSelectAnimationComplete
+                  : undefined
               }
             >
               <li

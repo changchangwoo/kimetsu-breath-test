@@ -33,7 +33,7 @@ export default function BottomUp({ children, delay }: IProps) {
   return (
     <>
       <motion.div
-        className="w-full h-auto"
+        className="w-full h-auto text-center"
         variants={itemVariants}
         initial="initial"
         animate="animate"
