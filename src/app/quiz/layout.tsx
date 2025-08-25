@@ -5,7 +5,7 @@ export default function QuizLayout({
 }>) {
   return (
     <div>
-      <div>{children}</div>
+      <div className="px-5">{children}</div>
     </div>
   );
 }

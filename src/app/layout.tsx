@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { PageTransitionProvider } from "@/contexts/PageTransitionContext";
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -12,8 +14,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="ko">
+      <body className="bg-[url('../../public/imgs/bg.png')] bg-cover bg-center ">
+<Script
+  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+  type="module"
+  strategy="beforeInteractive"
+/>
+        <PageTransitionProvider>{children}</PageTransitionProvider>
+      </body>
     </html>
   );
 }

@@ -1,0 +1,1 @@
+export type TresultType = "sun" | "fire" | "love" | "water" | "mist" | "moon" | "wind" | "beast" | "rock" | "insect" | "thunder" | "flower" | "sound" | "snake";
