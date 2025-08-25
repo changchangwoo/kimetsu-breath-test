@@ -15,13 +15,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="ko">
-      <body className="bg-[url('../../public/imgs/bg.png')] bg-cover bg-center ">
-<Script
-  src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
-  type="module"
-  strategy="beforeInteractive"
-/>
-        <PageTransitionProvider>{children}</PageTransitionProvider>
+      <body className="relative min-h-screen">
+        <div className="fixed inset-0 bg-[url('../../public/imgs/bg.png')] bg-repeat bg-auto -z-10" />
+
+        <div className="relative z-10">
+          <Script
+            src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+            type="module"
+            strategy="beforeInteractive"
+          />
+          <PageTransitionProvider>{children}</PageTransitionProvider>
+        </div>
       </body>
     </html>
   );
