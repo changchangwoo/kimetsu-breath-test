@@ -23,3 +23,12 @@ export type Tweights =
   | "결단"
   | "창의"
   | "열정";
+
+export type TBreathingDetails = {
+  title: string;
+  summary: string;
+  description: string;
+  strengths: string[];
+  weaknesses: string[];
+  keywords: string[];
+};

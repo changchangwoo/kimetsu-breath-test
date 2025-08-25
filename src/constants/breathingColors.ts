@@ -34,12 +34,3 @@ export const breathingNames: Record<Ttypes, string> = {
   snake: "뱀",
   sun: "태양",
 };
-
-// 사용 예시 함수들
-export const getBreathingColor = (type: Ttypes): string => {
-  return breathingColors[type];
-};
-
-export const getBreathingName = (type: Ttypes): string => {
-  return breathingNames[type];
-};
