@@ -1,7 +1,6 @@
-// src/constants/breathingColors.ts
-import { TresultType } from "../models/type";
+import { Ttypes } from "@/models/type";
 
-export const breathingColors: Record<TresultType, string> = {
+export const breathingColors: Record<Ttypes, string> = {
   water: "#4A90E2", // 푸른색
   fire: "#FF4500", // 주황빨강
   love: "#FF69B4", // 분홍색
@@ -19,7 +18,7 @@ export const breathingColors: Record<TresultType, string> = {
 };
 
 // 호흡법 한국어 이름 매핑
-export const breathingNames: Record<TresultType, string> = {
+export const breathingNames: Record<Ttypes, string> = {
   water: "물",
   fire: "화염",
   love: "사랑",
@@ -37,10 +36,10 @@ export const breathingNames: Record<TresultType, string> = {
 };
 
 // 사용 예시 함수들
-export const getBreathingColor = (type: TresultType): string => {
+export const getBreathingColor = (type: Ttypes): string => {
   return breathingColors[type];
 };
 
-export const getBreathingName = (type: TresultType): string => {
+export const getBreathingName = (type: Ttypes): string => {
   return breathingNames[type];
 };

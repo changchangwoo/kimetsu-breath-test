@@ -6,12 +6,9 @@ export default function WeightGraph() {
       ? JSON.parse(localStorage.getItem("weights") || "{}")
       : {};
 
-  console.log(weights);
-
-  return <>
-  <div className="w-[60%] bg-amber-50">
-    
-  </div>
-  
-  </>;
+  return (
+    <>
+      <div className="w-[60%] bg-amber-50"></div>
+    </>
+  );
 }
