@@ -30,3 +30,12 @@ export default function RootLayout({
     </html>
   );
 }
+
+/*
+Todo List
+- 텍스트 수정
+- 공유하기 데이터 셋업
+- 결과 QA
+- 결과 페이지 퍼블리싱
+- 
+*/
