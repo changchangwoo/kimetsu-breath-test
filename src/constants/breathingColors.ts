@@ -2,10 +2,9 @@ import { Ttypes } from "@/models/type";
 
 export const breathingColors: Record<Ttypes, string> = {
   water: "rgba(31, 83, 196, 0.7)", // 물 - 딥 블루
-  fire: "rgba(182, 58, 38, 0.8)", // 화염 - 톤다운 레드 오렌지
+  fire: "rgba(233, 79, 27, 0.7)", // 화염 - 붉음+주황 계열 (#E94F1B)
   love: "rgba(216, 97, 140, 0.7)", // 사랑 - 로즈핑크 톤다운
   mist: "rgba(62, 149, 146, 0.6)", // 안개 - 청록 계열 톤다운
-  moon: "rgba(59, 0, 104, 0.7)", // 달 - 딥 퍼플
   wind: "rgba(29, 140, 98, 0.6)", // 바람 - 딥 그린
   beast: "rgba(127, 142, 155, 0.7)", // 짐승 - 청회색
   rock: "rgba(98, 105, 115, 0.7)", // 바위 - 딥 그레이
@@ -23,7 +22,6 @@ export const breathingNames: Record<Ttypes, string> = {
   fire: "화염",
   love: "사랑",
   mist: "안개",
-  moon: "달",
   wind: "바람",
   beast: "짐승",
   rock: "바위",

@@ -14,15 +14,21 @@ export function Section02({
   breathingColor,
   breathingDetail,
   breathingName,
+  type,
 }: Section02Props) {
   const { title, summary, description, strengths, weaknesses, keywords } =
     breathingDetail;
+
+  const isSmall = ["sun", "insect", "love", "snake"].includes(type);
   return (
     <div
       className={`w-full py-10 px-5  h-auto flex flex-col gap-10`}
       style={{ backgroundColor: breathingColor }}
     >
-      <ResultHeader summary={summary} />
+      <ResultHeader
+        summary={summary}
+        summarySize={isSmall ? "text-smallTitle" : "text-title"}
+      />
       <ResultDescription description={description} />
       <ResultKeywords keywords={keywords} />
       <ResultSuccessor breathingName={breathingName} />
@@ -58,8 +64,8 @@ interface ResultKeywordsProps {
 
 export function ResultKeywords({ keywords }: ResultKeywordsProps) {
   return (
-    <div className="   w-full flex flex-col items-center rounded-xl py-5 ">
-      <h1 className="text-white font-shilla text-extraLarge mb-5">키워드</h1>
+    <div className="w-full flex flex-col items-center rounded-xl py-5 ">
+      <h1 className="text-white font-shilla text-extraLarge mb-2">키워드</h1>
       <div className="px-3 flex gap-2 flex-wrap justify-center">
         {keywords.map((keyword, index) => (
           <span

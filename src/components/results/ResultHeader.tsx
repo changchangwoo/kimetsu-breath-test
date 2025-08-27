@@ -5,9 +5,13 @@ import { useEffect, useRef, useState } from "react";
 
 interface ResultHeaderProps {
   summary: string;
+  summarySize: "text-smallTitle" | "text-title";
 }
 
-export function ResultHeader({ summary }: ResultHeaderProps) {
+export function ResultHeader({
+  summary,
+  summarySize = "text-title",
+}: ResultHeaderProps) {
   const [showGraph, setShowGraph] = useState(false);
   const graphRef = useRef<HTMLDivElement | null>(null);
 
@@ -31,7 +35,9 @@ export function ResultHeader({ summary }: ResultHeaderProps) {
 
   return (
     <>
-      <h1 className="font-shilla text-title text-white mb-5 px-5 ">
+      <h1
+        className={`font-shilla text-white mb-5 whitespace-pre-line ${summarySize} text-center`}
+      >
         “{summary}”
       </h1>
 

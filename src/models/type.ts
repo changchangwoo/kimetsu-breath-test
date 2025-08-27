@@ -4,7 +4,6 @@ export type Ttypes =
   | "love"
   | "water"
   | "mist"
-  | "moon"
   | "wind"
   | "beast"
   | "rock"

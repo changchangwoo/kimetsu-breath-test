@@ -56,17 +56,21 @@ export default function WeightGraph() {
             dataKey="subject"
             tick={{ fill: "#ffffff", fontSize: 17, fontWeight: 500 }}
           />
-          <PolarRadiusAxis
-            angle={0}
-            domain={[0, 10]}
-            tick={false}
-            axisLine={false}
+          <PolarAngleAxis
+            dataKey="subject"
+            tick={{
+              fill: "#ffffff",
+              fontSize: 17,
+              fontWeight: 500,
+              dy: 0, // y축 방향으로 10px 아래로 이동
+            }}
           />
+
           <Radar
             name="능력치"
             dataKey="value"
-            stroke="#8884d8"
-            fill="#8884d8"
+            stroke="#ffffff"
+            fill="#ffffff"
             fillOpacity={0.6}
             strokeWidth={2}
           />
