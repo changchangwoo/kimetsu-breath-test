@@ -1,4 +1,6 @@
 import { TBreathingDetails, Ttypes } from "@/models/type";
+import ButtonShare from "../share/ButtonShare";
+import { ResultHeader } from "./ResultHeader";
 
 const css_subTitle = "";
 interface Section02Props {
@@ -34,24 +36,6 @@ export function Section02({
   );
 }
 
-import WeightGraph from "../weightsGraph";
-import ButtonShare from "../share/ButtonShare";
-
-interface ResultHeaderProps {
-  summary: string;
-}
-
-export function ResultHeader({ summary }: ResultHeaderProps) {
-  return (
-    <>
-      <h1 className="font-shilla text-title text-white mb-5 px-5">
-        “{summary}”
-      </h1>
-      <WeightGraph />
-    </>
-  );
-}
-
 interface ResultDescriptionProps {
   description: string;
 }
@@ -60,7 +44,8 @@ export function ResultDescription({ description }: ResultDescriptionProps) {
   return (
     <div
       className="text-medium w-full flex flex-col gap-2 h-auto py-5 px-5 bg-white/15 backdrop-blur-md items-center rounded-xl
-    font-nanumB whitespace-pre-line line tracking-wide text-white"
+    font-nanumB whitespace-pre-line line tracking-wide text-white
+    border-border/20 border"
     >
       {description}
     </div>
@@ -95,7 +80,7 @@ interface ResultSuccessorProps {
 
 export function ResultSuccessor({ breathingName }: ResultSuccessorProps) {
   return (
-    <div className="bg-white/15 backdrop-blur-md w-full flex flex-col items-center rounded-xl py-5 min-h-56">
+    <div className="bg-white/15 backdrop-blur-md w-full flex flex-col items-center rounded-xl py-5 min-h-56 border border-border/20">
       <h1 className="text-white font-shilla text-extraLarge mb-5">
         {breathingName}의 호흡 계승자
       </h1>
