@@ -7,6 +7,7 @@ interface ShareButtonProps {
   url?: string;
   text?: string;
   className?: string;
+  isResult?: boolean;
 }
 
 export const XShareButton: React.FC<ShareButtonProps> = ({
@@ -122,16 +123,18 @@ export const NativeShareButton: React.FC<ShareButtonProps> = ({
 const ButtonShare: React.FC<{
   url?: string;
   text?: string;
+  isResult?: boolean;
 }> = ({
   url = typeof window !== "undefined" ? window.location.href : "",
   text = "이 페이지를 확인해보세요!",
+  isResult = false,
 }) => {
   return (
     <div className="flex gap-2 justify-center">
       <KakaoShareButton />
-      <XShareButton url={url} text={text} />
-      <ThreadsShareButton url={url} text={text} />
-      <NativeShareButton url={url} text={text} />
+      <XShareButton url={url} text={text} isResult={isResult} />
+      <ThreadsShareButton url={url} text={text} isResult={isResult} />
+      <NativeShareButton url={url} text={text} isResult={isResult} />
     </div>
   );
 };

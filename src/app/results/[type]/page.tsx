@@ -31,6 +31,7 @@ export default async function ResultPage({ params }: PageProps) {
             type={type}
             breathingColor={breathingColor}
             breathingDetail={breathingDetail}
+            breathingName={breathingName}
           />
         }
       ></ResultContent>
