@@ -25,7 +25,7 @@ interface WeightData {
 interface ChartDataPoint {
   subject: string;
   value: number;
-  fullMark: 10;
+  fullMark: 20;
 }
 
 export default function WeightGraph() {
@@ -36,15 +36,14 @@ export default function WeightGraph() {
 
   // 데이터를 Recharts가 요구하는 형식으로 변환
   const chartData: ChartDataPoint[] = [
-    { subject: "리더십", value: weights.리더십 ?? 0, fullMark: 10 },
-    { subject: "결단", value: weights.결단 ?? 0, fullMark: 10 },
-    { subject: "공격", value: weights.공격 ?? 0, fullMark: 10 },
-    { subject: "신중", value: weights.신중 ?? 0, fullMark: 10 },
-    { subject: "열정", value: weights.열정 ?? 0, fullMark: 10 },
-    { subject: "창의", value: weights.창의 ?? 0, fullMark: 10 },
-    { subject: "침착", value: weights.침착 ?? 0, fullMark: 10 },
-    { subject: "헌신", value: weights.헌신 ?? 0, fullMark: 10 },
-    { subject: "협력", value: weights.협력 ?? 0, fullMark: 10 },
+    { subject: "결단", value: weights.결단 ?? 0, fullMark: 20 },
+    { subject: "공격", value: weights.공격 ?? 0, fullMark: 20 },
+    { subject: "신중", value: weights.신중 ?? 0, fullMark: 20 },
+    { subject: "열정", value: weights.열정 ?? 0, fullMark: 20 },
+    { subject: "창의", value: weights.창의 ?? 0, fullMark: 20 },
+    { subject: "침착", value: weights.침착 ?? 0, fullMark: 20 },
+    { subject: "헌신", value: weights.헌신 ?? 0, fullMark: 20 },
+    { subject: "협력", value: weights.협력 ?? 0, fullMark: 20 },
   ];
 
   return (
