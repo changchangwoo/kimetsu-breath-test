@@ -1,12 +1,11 @@
-import { TBreathingDetails, Ttypes } from "@/models/type";
-import ButtonShare from "../share/ButtonShare";
-import { ResultHeader } from "./ResultHeader";
-import { ResultSuccessor } from "./ResultSuccessor";
+import { TBreathingDetails, Ttypes } from '@/models/type';
+import ButtonShare from '../share/ButtonShare';
+import { ResultHeader } from './ResultHeader';
+import { ResultSuccessor } from './ResultSuccessor';
 
-const css_subTitle = "";
+const css_subTitle = '';
 
 // 호흡 타입별 캐릭터 데이터
-
 
 interface Section02Props {
   breathingColor: string;
@@ -24,7 +23,7 @@ export function Section02({
   const { title, summary, description, strengths, weaknesses, keywords } =
     breathingDetail;
 
-  const isSmall = ["sun", "insect", "love", "snake"].includes(type);
+  const isSmall = ['sun', 'insect', 'love', 'snake', 'flower'].includes(type);
   return (
     <div
       className={`w-full py-10 px-5  h-auto flex flex-col gap-10`}
@@ -32,7 +31,7 @@ export function Section02({
     >
       <ResultHeader
         summary={summary}
-        summarySize={isSmall ? "text-smallTitle" : "text-title"}
+        summarySize={isSmall ? 'text-smallTitle' : 'text-title'}
       />
       <ResultDescription description={description} />
       <ResultKeywords keywords={keywords} />
@@ -53,9 +52,11 @@ interface ResultDescriptionProps {
 
 export function ResultDescription({ description }: ResultDescriptionProps) {
   return (
-    <div className="text-medium w-full flex flex-col gap-2 h-auto py-5 px-5 bg-white/15 backdrop-blur-md items-center rounded-xl
+    <div
+      className="text-medium w-full flex flex-col gap-2 h-auto py-5 px-5 bg-white/15 backdrop-blur-md items-center rounded-xl
     font-nanumB whitespace-pre-line line tracking-wide text-white
-    border-border/20 border">
+    border-border/20 border"
+    >
       {description}
     </div>
   );

@@ -1,14 +1,14 @@
-import PageMoveButton from "@/components/PageMoveButton";
-import BottomUp from "@/animation/BottomUp";
-import PageTransition from "@/animation/PageTransition";
-import ButtonShare from "@/components/share/ButtonShare";
-import fetchData from "@/apis/fetch";
+import BottomUp from '@/animation/BottomUp';
+import PageTransition from '@/animation/PageTransition';
+import fetchData from '@/apis/fetch';
+import PageMoveButton from '@/components/PageMoveButton';
+import ButtonShare from '@/components/share/ButtonShare';
 
 export default async function Home() {
   let delay = 0.05;
   const step = 0.05;
 
-  const countUser = await fetchData(`/`, "GET");
+  const countUser = await fetchData(`/`, 'GET');
 
   return (
     <PageTransition>
@@ -16,7 +16,7 @@ export default async function Home() {
         className="
     px-5
     py-20 
-    h-dvh flex flex-col text-center items-center"
+    h-dvh flex flex-col text-center items-center overflow-y-hidden"
       >
         <BottomUp delay={delay}>
           <h1 className="mb-10 text-title font-shilla text-lightGray">

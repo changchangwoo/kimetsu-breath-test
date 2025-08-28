@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { usePageTransition } from "@/contexts/PageTransitionContext";
+import { usePageTransition } from '@/contexts/PageTransitionContext';
+import { motion } from 'framer-motion';
 
 export default function PageTransition({
   children,
@@ -15,7 +15,6 @@ export default function PageTransition({
     },
     exit: {
       opacity: 0,
-      y: 25,
       transition: {
         duration: 0.7,
         ease: [0.7, 0.1, 0.4, 1] as const,
@@ -26,10 +25,10 @@ export default function PageTransition({
   return (
     <>
       <motion.div
-        className="w-full h-auto"
+        className="w-full overscroll-y-none"
         variants={itemVariants}
         initial="initial"
-        animate={isTransitioning ? "exit" : "initial"}
+        animate={isTransitioning ? 'exit' : 'initial'}
       >
         {children}
       </motion.div>

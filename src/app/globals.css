@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @font-face {
   font-family: nanum;
@@ -16,9 +16,9 @@
 
 @theme {
   /* 폰트 설정 */
-  --font-nanum: "nanum";
-  --font-nanumB: "nanumB";
-  --font-shilla: "shilla";
+  --font-nanum: 'nanum';
+  --font-nanumB: 'nanumB';
+  --font-shilla: 'shilla';
 
   --color-white: #ffffff;
   --color-lightGray: #e1e1e1;
@@ -28,7 +28,7 @@
   /* 또는 기존 시스템에 추가 */
   --text-extraTitle: 48px;
   --text-title: 36px;
-  --text-smallTitle: 29px;
+  --text-smallTitle: 28px;
   --text-extraLarge: 24px;
   --text-large: 20px;
   --text-medium: 16px;

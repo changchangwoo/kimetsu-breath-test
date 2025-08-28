@@ -45,22 +45,30 @@ export function ResultSuccessor({ breathingName, type }: ResultSuccessorProps) {
         {/* 이미지 컨테이너 */}
         <AnimatePresence mode="wait">
           <PickItem key={currentIndex}>
-            <div className="w-[150px] h-[300px] relative">
-              <Image
-                src={currentCharacter.image}
-                alt={`${currentCharacter.name}의 이미지`}
-                fill
-                sizes="100%"
-                className="object-cover relative"
-                priority
-              />
+            <div className="w-[150px] h-[300px] relative flex justify-center">
+              {currentCharacter.image !== 'null' ? (
+                <Image
+                  src={currentCharacter.image}
+                  alt={`${currentCharacter.name}의 이미지`}
+                  fill
+                  sizes="100%"
+                  className="object-cover relative"
+                  priority
+                />
+              ) : (
+                <>
+                  <span className="flex items-center text-white font-nanum">
+                    이미지 없음
+                  </span>
+                </>
+              )}
             </div>
 
             <div className="text-center mt-4">
               <h2 className="text-white font-shilla text-large mb-2">
                 {currentCharacter.name}
               </h2>
-              <p className="text-white/80 font-nanum text-small">
+              <p className="text-white/80 font-nanum text-small whitespace-pre-line">
                 {currentCharacter.description}
               </p>
             </div>

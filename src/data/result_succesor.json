@@ -3,166 +3,166 @@
     "water": [
       {
         "name": "토미오카 기유",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/4/43/Giyu_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/giyuu.webp",
         "description": "수주"
       },
       {
-        "name": "우루코다키 사콘지",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/4/43/Giyu_anime_design.png/revision/latest?cb=20190831073602",
+        "name": "우로코다키 사콘지",
+        "image": "/imgs/succesor/urokodaki.webp",
         "description": "전 수주"
       },
       {
         "name": "칸자키 아오이",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/4/43/Giyu_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/kanzaki.webp",
         "description": "나비저택 수간호사"
       },
       {
         "name": "사비토",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/4/43/Giyu_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/sabito.webp",
         "description": "우로코다키의 수제자"
       },
       {
         "name": "마코모",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/4/43/Giyu_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/makomo.webp",
         "description": "우로코다키의 제자"
       },
       {
         "name": "카마도 탄지로",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/4/43/Giyu_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/tanjirou.webp",
         "description": "히노카미 카구라 계승자"
       },
       {
         "name": "무라타",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/4/43/Giyu_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/murata.png",
         "description": "귀살대 대원"
       }
     ],
     "fire": [
       {
         "name": "렌고쿠 쿄주로",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/3/3c/Kyojuro_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/rengoku.webp",
         "description": "염주"
       },
       {
         "name": "렌고쿠 신쥬로",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/1/1f/Muichiro_anime_design.png/revision/latest?cb=20211205000000",
+        "image": "/imgs/succesor/shinjyuro.png",
         "description": "전 염주"
       },
       {
         "name": "칸로지 미츠리",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/1/1f/Muichiro_anime_design.png/revision/latest?cb=20211205000000",
+        "image": "/imgs/succesor/mitsuri.webp",
         "description": "연주"
       }
     ],
     "thunder": [
       {
         "name": "아가츠마 젠이츠",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Zenitsu_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/zenitsu.webp",
         "description": "번개의 호흡 계승자"
       },
       {
         "name": "쿠와지마 지고로",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/5/5a/Kaigaku_anime_design.png/revision/latest?cb=20211205000000",
+        "image": "/imgs/succesor/Jigoro.png",
         "description": "전 명주"
       },
       {
         "name": "카이가쿠",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/5/5a/Kaigaku_anime_design.png/revision/latest?cb=20211205000000",
-        "description": "상현6\n 전 번개의 호흡 계승자"
+        "image": "/imgs/succesor/kaigaku.webp",
+        "description": "전 번개의 호흡 계승자"
       },
       {
         "name": "우즈이 텐겐",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/5/5a/Kaigaku_anime_design.png/revision/latest?cb=20211205000000",
+        "image": "/imgs/succesor/tengen.webp",
         "description": "음주"
       }
     ],
     "wind": [
       {
         "name": "시나즈가와 사네미",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/8a/Sanemi_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/sanemi.webp",
         "description": "풍주"
       },
       {
         "name": "쿠메노 마사치카",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/1/1f/Masachika_anime_design.png/revision/latest?cb=20211205000000",
+        "image": "null",
         "description": "귀살대 대원"
       }
     ],
     "rock": [
       {
         "name": "히메지마 교메이",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Gyomei_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/gyomei.webp",
         "description": "암주"
       }
     ],
     "sun": [
       {
-        "name": "츠기쿠니 요리이치",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/8a/Tanjiro_anime_design.png/revision/latest?cb=20190831073602",
-        "description": "해의 호흡 창시자"
+        "name": "카마도 탄지로",
+        "image": "/imgs/succesor/tanjirou.webp",
+        "description": "히노카미 카구라 계승자"
       },
       {
-        "name": "카마도 탄지로",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/3/3c/Yoriichi_anime_design.png/revision/latest?cb=20211205000000",
-        "description": "히노카미 카구라 계승자"
+        "name": "츠기쿠니 요리이치",
+        "image": "/imgs/succesor/yoriichi.webp",
+        "description": "해의 호흡 창시자"
       }
     ],
     "mist": [
       {
-        "name": "무이치로 토키토",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/1/1f/Muichiro_anime_design.png/revision/latest?cb=20211205000000",
+        "name": "토키토 무이치로",
+        "image": "/imgs/succesor/tokito.webp",
         "description": "하주"
       }
     ],
     "flower": [
       {
         "name": "츠유리 카나오",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/8a/Kanao_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/kanao.webp",
         "description": "꽃의 호흡 사용자"
       },
       {
         "name": "코쵸우 카나에",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Shinobu_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/kanae.png",
         "description": "전 화주"
       },
       {
         "name": "코쵸우 시노부",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Shinobu_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/shinobu.webp",
         "description": "충주"
       }
     ],
     "insect": [
       {
         "name": "코쵸우 시노부",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Shinobu_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/shinobu.webp",
         "description": "충주"
       }
     ],
     "love": [
       {
         "name": "칸로지 미츠리",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/1/1f/Mitsuri_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/mitsuri.webp",
         "description": "연주"
       }
     ],
     "snake": [
       {
         "name": "이구로 오바나이",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/5/5a/Obanai_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/obanai.webp",
         "description": "사주"
       }
     ],
     "beast": [
       {
         "name": "하시비라 이노스케",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Inosuke_anime_design.png/revision/latest?cb=20190831073602",
+        "image": "/imgs/succesor/inosuke.webp",
         "description": "짐승의 호흡 창시자"
       }
     ],
     "sound": [
       {
         "name": "우즈이 텐겐",
-        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/8a/Tengen_anime_design.png/revision/latest?cb=20211205000000",
+        "image": "/imgs/succesor/tengen.webp",
         "description": "음주"
       }
     ]

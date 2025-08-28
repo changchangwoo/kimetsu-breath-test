@@ -152,8 +152,8 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="relative min-h-screen">
-        <div className="fixed inset-0 bg-[url('../../public/imgs/bg.png')] bg-repeat bg-auto -z-10" />
+      <body className="relative min-h-screen max-w-[400px] m-auto">
+        <div className="fixed inset-0 bg-[url('../../public/imgs/bg.jpg')] bg-repeat bg-auto -z-10" />
 
         <div className="relative z-10">
           <Script
