@@ -47,7 +47,7 @@ export function Section01({
 
       <BottomUp delay={(delay += step)}>
         <h3 className="mt-20 font-nanum text-gray">
-          아래로 드래그해 결과설명 확인하기
+          아래로 드래그해 결과 자세히보기
         </h3>
       </BottomUp>
 

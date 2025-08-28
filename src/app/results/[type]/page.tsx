@@ -6,12 +6,12 @@ import { ResultContent } from "@/components/results/ResultContent";
 import resultDetail from "@/data/result_script.json";
 
 interface PageProps {
-  params: { type: Ttypes };
+  params: Promise<{ type: Ttypes }>; 
 }
 
 export default async function ResultPage({ params }: PageProps) {
   const { type } = await params;
-
+  
   const breathingColor = breathingColors[type];
   const breathingName = breathingNames[type];
   const breathingDetail = resultDetail[type];

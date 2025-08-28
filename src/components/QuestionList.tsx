@@ -7,8 +7,8 @@ import { ProgressBar } from "./ProgressBar";
 import { Tweights } from "@/models/type";
 import { useRouter } from "next/navigation";
 import { usePageTransition } from "@/contexts/PageTransitionContext";
+import fetchData from "@/apis/fetch";
 
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 interface QuestionListProps {
   scripts: {
@@ -76,12 +76,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
       }
 
       try {
-        const response = await fetch(`${API_BASE_URL}/results`, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ weights }),
-        });
-        const result = await response.json();
+        const result = await fetchData(`/results`, "POST", { weights });
         const type = result.type as string;
         const href = `/results/${type}`;
         localStorage.setItem("weights", JSON.stringify(weights));
@@ -115,5 +110,5 @@ export default function QuestionList({ scripts }: QuestionListProps) {
         />
       </AnimatePresence>
     </div>
-  );
+  ); 
 }

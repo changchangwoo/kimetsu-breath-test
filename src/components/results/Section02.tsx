@@ -1,8 +1,13 @@
 import { TBreathingDetails, Ttypes } from "@/models/type";
 import ButtonShare from "../share/ButtonShare";
 import { ResultHeader } from "./ResultHeader";
+import { ResultSuccessor } from "./ResultSuccessor";
 
 const css_subTitle = "";
+
+// 호흡 타입별 캐릭터 데이터
+
+
 interface Section02Props {
   breathingColor: string;
   breathingDetail: TBreathingDetails;
@@ -31,7 +36,7 @@ export function Section02({
       />
       <ResultDescription description={description} />
       <ResultKeywords keywords={keywords} />
-      <ResultSuccessor breathingName={breathingName} />
+      <ResultSuccessor breathingName={breathingName} type={type} />
       <ResultShare />
       <footer className="text-extraSmall w-full flex flex-col items-center justify-center font-nanum text-lightGray/40">
         <h3>changchangwoo@naver.com</h3>
@@ -48,11 +53,9 @@ interface ResultDescriptionProps {
 
 export function ResultDescription({ description }: ResultDescriptionProps) {
   return (
-    <div
-      className="text-medium w-full flex flex-col gap-2 h-auto py-5 px-5 bg-white/15 backdrop-blur-md items-center rounded-xl
+    <div className="text-medium w-full flex flex-col gap-2 h-auto py-5 px-5 bg-white/15 backdrop-blur-md items-center rounded-xl
     font-nanumB whitespace-pre-line line tracking-wide text-white
-    border-border/20 border"
-    >
+    border-border/20 border">
       {description}
     </div>
   );
@@ -76,20 +79,6 @@ export function ResultKeywords({ keywords }: ResultKeywordsProps) {
           </span>
         ))}
       </div>
-    </div>
-  );
-}
-
-interface ResultSuccessorProps {
-  breathingName: string;
-}
-
-export function ResultSuccessor({ breathingName }: ResultSuccessorProps) {
-  return (
-    <div className="bg-white/15 backdrop-blur-md w-full flex flex-col items-center rounded-xl py-5 min-h-56 border border-border/20">
-      <h1 className="text-white font-shilla text-extraLarge mb-5">
-        {breathingName}의 호흡 계승자
-      </h1>
     </div>
   );
 }

@@ -1,4 +1,5 @@
-const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
+import fetchData from "@/apis/fetch";
+
 
 interface ResultData {
   id: string;
@@ -7,28 +8,13 @@ interface ResultData {
 }
 
 interface PageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
-export default async function SharePage(props: PageProps) {
-  const { id } = props.params;
+export default async function SharePage({ params }: PageProps) {
+  const { id } = await params;
 
-  let result: ResultData | null = null;
-
-  try {
-    const response = await fetch(`${API_BASE_URL}/results/${id}`, {
-      method: "GET",
-      headers: { "Content-Type": "application/json" },
-    });
-
-    if (!response.ok) {
-      throw new Error(`API 요청 실패: ${response.status}`);
-    }
-
-    result = await response.json();
-  } catch (err) {
-    console.error(err);
-  }
+  let result = await fetchData(`/results/${id}`);
 
   return (
     <div className="h-dvh flex flex-col justify-center items-center gap-5">

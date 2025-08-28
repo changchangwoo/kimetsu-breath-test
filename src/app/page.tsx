@@ -1,12 +1,14 @@
 import PageMoveButton from "@/components/PageMoveButton";
 import BottomUp from "@/animation/BottomUp";
 import PageTransition from "@/animation/PageTransition";
-import KakaoShareButton from "@/components/share/KakaoTalkShare";
 import ButtonShare from "@/components/share/ButtonShare";
+import fetchData from "@/apis/fetch";
 
-export default function Home() {
+export default async function Home() {
   let delay = 0.05;
   const step = 0.05;
+
+  const countUser = await fetchData(`/`, "GET");
 
   return (
     <PageTransition>
@@ -33,7 +35,7 @@ export default function Home() {
 
         <BottomUp delay={(delay += step)}>
           <h2 className="mb-5 font-shilla text-medium text-lightGray">
-            현재 호흡을 계승한 인원 314명
+            현재 호흡을 계승한 인원 {countUser}명
           </h2>
         </BottomUp>
 
@@ -60,3 +62,18 @@ export default function Home() {
     </PageTransition>
   );
 }
+
+/*
+Todo
+: 강점 약점 추가..? => 이거 있어야하나
+: 호흡 계승자 이미지 추가, 설명 추가
+: 이미지 추가 => 결과 화면 AI 이미지
+: 개발 완료 후 QA
+: Vercel 배포
+: 배포 도메인 카카오 공유하기 연결
+: OG 태그 설정, 추가
+=> 공유하기 OG 태그 QA
+: 반응형 추가
+:   
+
+*/

@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef } from 'react';
 
 interface ResultContentProps {
   firstSection: React.ReactNode;
@@ -32,8 +32,8 @@ export function ResultContent({
 
         if (section02) {
           section02.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
+            behavior: 'smooth',
+            block: 'start',
           });
         }
 
@@ -69,22 +69,22 @@ export function ResultContent({
             moveEvent.stopPropagation();
             isTransitioning.current = true;
 
-            document.removeEventListener("touchmove", handleTouchMove);
-            document.removeEventListener("touchend", handleTouchEnd);
+            document.removeEventListener('touchmove', handleTouchMove);
+            document.removeEventListener('touchend', handleTouchEnd);
 
             setTimeout(() => {
               const section02 = section02Ref.current;
 
               if (section02) {
-                document.body.style.overflow = "hidden";
+                document.body.style.overflow = 'hidden';
 
                 section02.scrollIntoView({
-                  behavior: "smooth",
-                  block: "start",
+                  behavior: 'smooth',
+                  block: 'start',
                 });
 
                 setTimeout(() => {
-                  document.body.style.overflow = "";
+                  document.body.style.overflow = '';
                   isTransitioning.current = false;
                 }, 800);
               }
@@ -93,25 +93,25 @@ export function ResultContent({
         };
 
         const handleTouchEnd = () => {
-          document.removeEventListener("touchmove", handleTouchMove);
-          document.removeEventListener("touchend", handleTouchEnd);
+          document.removeEventListener('touchmove', handleTouchMove);
+          document.removeEventListener('touchend', handleTouchEnd);
         };
 
-        document.addEventListener("touchmove", handleTouchMove, {
+        document.addEventListener('touchmove', handleTouchMove, {
           passive: false,
         });
-        document.addEventListener("touchend", handleTouchEnd);
+        document.addEventListener('touchend', handleTouchEnd);
       }
     };
 
-    window.addEventListener("wheel", handleWheel, { passive: false });
-    document.addEventListener("touchstart", handleTouchStart, {
+    window.addEventListener('wheel', handleWheel, { passive: false });
+    document.addEventListener('touchstart', handleTouchStart, {
       passive: false,
     });
 
     return () => {
-      window.removeEventListener("wheel", handleWheel);
-      document.removeEventListener("touchstart", handleTouchStart);
+      window.removeEventListener('wheel', handleWheel);
+      document.removeEventListener('touchstart', handleTouchStart);
     };
   }, []);
 

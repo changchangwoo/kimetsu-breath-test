@@ -1,0 +1,135 @@
+{
+  "successorData": {
+    "water": [
+      {
+        "name": "토미오카 기유",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/4/43/Giyu_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "물의 호흡 사용자"
+      },
+      {
+        "name": "우즈이 텐겐",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/8a/Tengen_anime_design.png/revision/latest?cb=20211205000000",
+        "description": "소리의 호흡 사용자"
+      }
+    ],
+    "fire": [
+      {
+        "name": "렌고쿠 쿄주로",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/3/3c/Kyojuro_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "화염의 호흡 사용자"
+      },
+      {
+        "name": "무이치로 토키토",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/1/1f/Muichiro_anime_design.png/revision/latest?cb=20211205000000",
+        "description": "안개의 호흡 사용자"
+      }
+    ],
+    "thunder": [
+      {
+        "name": "젠이츠 아가츠마",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Zenitsu_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "번개의 호흡 사용자"
+      },
+      {
+        "name": "카이겐 우즈이",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/5/5a/Kaigaku_anime_design.png/revision/latest?cb=20211205000000",
+        "description": "번개의 호흡 사용자"
+      }
+    ],
+    "wind": [
+      {
+        "name": "사네미 시나즈가와",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/8a/Sanemi_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "바람의 호흡 사용자"
+      },
+      {
+        "name": "마사치카 젠고",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/1/1f/Masachika_anime_design.png/revision/latest?cb=20211205000000",
+        "description": "바람의 호흡 사용자"
+      }
+    ],
+    "rock": [
+      {
+        "name": "교메이 히메지마",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Gyomei_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "돌의 호흡 사용자"
+      }
+    ],
+    "sun": [
+      {
+        "name": "타니지로 카마도",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/8a/Tanjiro_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "태양의 호흡 사용자"
+      },
+      {
+        "name": "요리이치 츠기쿠니",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/3/3c/Yoriichi_anime_design.png/revision/latest?cb=20211205000000",
+        "description": "태양의 호흡 창시자"
+      }
+    ],
+    "mist": [
+      {
+        "name": "무이치로 토키토",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/1/1f/Muichiro_anime_design.png/revision/latest?cb=20211205000000",
+        "description": "안개의 호흡 사용자"
+      },
+      {
+        "name": "미치카츠 토키토",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/1/1f/Michikatsu_anime_design.png/revision/latest?cb=20211205000000",
+        "description": "안개의 호흡 사용자"
+      }
+    ],
+    "flower": [
+      {
+        "name": "시노부 코쵸",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Shinobu_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "꽃의 호흡 사용자"
+      },
+      {
+        "name": "카나오 츠유리",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/8a/Kanao_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "꽃의 호흡 사용자"
+      }
+    ],
+    "insect": [
+      {
+        "name": "시노부 코쵸",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Shinobu_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "곤충의 호흡 사용자"
+      },
+      {
+        "name": "카나오 츠유리",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/8a/Kanao_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "곤충의 호흡 사용자"
+      }
+    ],
+    "love": [
+      {
+        "name": "미츠리 카나로지",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/1/1f/Mitsuri_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "사랑의 호흡 사용자"
+      }
+    ],
+    "snake": [
+      {
+        "name": "오바나이 이그로",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/5/5a/Obanai_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "뱀의 호흡 사용자"
+      }
+    ],
+    "beast": [
+      {
+        "name": "이노스케 하시비라",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/2/2a/Inosuke_anime_design.png/revision/latest?cb=20190831073602",
+        "description": "짐승의 호흡 사용자"
+      }
+    ],
+    "sound": [
+      {
+        "name": "우즈이 텐겐",
+        "image": "https://static.wikia.nocookie.net/kimetsu-no-yaiba/images/8/8a/Tengen_anime_design.png/revision/latest?cb=20211205000000",
+        "description": "소리의 호흡 사용자"
+      }
+    ]
+  }
+}
