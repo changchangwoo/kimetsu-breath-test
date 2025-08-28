@@ -1,7 +1,9 @@
 'use client';
 
+import PickItem from '@/animation/PickItem';
 import { successorData } from '@/data/result_succesor.json';
 import { Ttypes } from '@/models/type';
+import { AnimatePresence } from 'motion/react';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -27,68 +29,55 @@ export function ResultSuccessor({ breathingName, type }: ResultSuccessorProps) {
   return (
     <div className="bg-white/15 backdrop-blur-md w-full flex flex-col items-center rounded-xl py-5 min-h-56 border border-border/20">
       <h1 className="text-white font-shilla text-extraLarge mb-5">
-        {breathingName}의 호흡 계승자
+        {breathingName}의 호흡 사용자
       </h1>
 
-      <div className="relative w-full max-w-[200px] flex items-center justify-center">
+      <div className="relative w-full flex items-center justify-center">
         {/* 이전 버튼 */}
         <button
           onClick={prevImage}
-          className="absolute left-2 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
+          className="absolute z-10 left-10 backdrop-blur-2xl bg-white/10 text-white rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300 hover:w-10 hover:h-10 hover:bg-white/30 hover:text-white active:scale-105 active:bg-white/50 cursor-pointer"
           aria-label="이전 이미지"
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M15 18l-6-6 6-6" />
-          </svg>
+          <span className="text-large font-shilla flex items-center justify-center">{`<`}</span>
         </button>
 
         {/* 이미지 컨테이너 */}
-        <div className="w-[150px] h-[300px] relative">
-          <Image
-            src={currentCharacter.image}
-            alt={`${currentCharacter.name}의 이미지`}
-            fill
-            sizes="100%"
-            className="object-cover relative"
-            priority
-          />
-        </div>
+        <AnimatePresence mode="wait">
+          <PickItem key={currentIndex}>
+            <div className="w-[150px] h-[300px] relative">
+              <Image
+                src={currentCharacter.image}
+                alt={`${currentCharacter.name}의 이미지`}
+                fill
+                sizes="100%"
+                className="object-cover relative"
+                priority
+              />
+            </div>
+
+            <div className="text-center mt-4">
+              <h2 className="text-white font-shilla text-large mb-2">
+                {currentCharacter.name}
+              </h2>
+              <p className="text-white/80 font-nanum text-small">
+                {currentCharacter.description}
+              </p>
+            </div>
+          </PickItem>
+        </AnimatePresence>
 
         {/* 다음 버튼 */}
         <button
           onClick={nextImage}
-          className="absolute right-2 z-10 bg-white/20 hover:bg-white/30 text-white rounded-full w-8 h-8 flex items-center justify-center transition-all duration-200 backdrop-blur-sm"
+          className="absolute z-10 right-10 backdrop-blur-2xl bg-white/10 text-white rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300 hover:w-10 hover:h-10 hover:bg-white/30 hover:text-white active:scale-105 active:bg-white/50 cursor-pointer"
           aria-label="다음 이미지"
         >
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            <path d="M9 18l6-6-6-6" />
-          </svg>
+          <span className="text-large font-shilla flex items-center justify-center">{`>`}</span>
         </button>
       </div>
 
       {/* 캐릭터 정보 */}
-      <div className="text-center mt-4">
-        <h2 className="text-white font-shilla text-large mb-2">
-          {currentCharacter.name}
-        </h2>
-        <p className="text-white/80 font-nanum text-small">
-          {currentCharacter.description}
-        </p>
-      </div>
 
       {/* 인디케이터 */}
       {characters.length > 1 && (
