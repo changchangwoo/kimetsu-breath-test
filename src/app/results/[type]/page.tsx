@@ -1,17 +1,23 @@
-import { breathingColors, breathingNames } from "@/constants/breathingColors";
-import { Ttypes } from "@/models/type";
-import { Section01 } from "@/components/results/Section01";
-import { Section02 } from "@/components/results/Section02";
-import { ResultContent } from "@/components/results/ResultContent";
-import resultDetail from "@/data/result_script.json";
+import { ResultContent } from '@/components/results/ResultContent';
+import { Section01 } from '@/components/results/Section01';
+import { Section02 } from '@/components/results/Section02';
+import { breathingColors, breathingNames } from '@/constants/breathingColors';
+import resultDetail from '@/data/result_script.json';
+import { Ttypes } from '@/models/type';
 
 interface PageProps {
-  params: Promise<{ type: Ttypes }>; 
+  params: Promise<{ type: Ttypes }>;
+}
+
+export async function generateStaticParams() {
+  return Object.keys(breathingColors).map(type => ({
+    type: type as Ttypes,
+  }));
 }
 
 export default async function ResultPage({ params }: PageProps) {
   const { type } = await params;
-  
+
   const breathingColor = breathingColors[type];
   const breathingName = breathingNames[type];
   const breathingDetail = resultDetail[type];

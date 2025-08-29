@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import RightToLeft from "../animation/RightToLeft";
-import SelectedItem from "../animation/SelectedItem";
-import { useState } from "react";
+import RightToLeft from '@/animation/RightToLeft';
+import SelectedItem from '@/animation/SelectedItem';
+import Image from 'next/image';
+import { useState } from 'react';
 
 interface QuestionStepProps {
   script: {

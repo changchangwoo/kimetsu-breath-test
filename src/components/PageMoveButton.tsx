@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useRouter } from "next/navigation";
-import { AnswersType } from "./QuestionList";
-import { usePageTransition } from "@/contexts/PageTransitionContext";
+import { AnswersType } from '@/components/quiz/QuestionList';
+import { usePageTransition } from '@/contexts/PageTransitionContext';
+import { useRouter } from 'next/navigation';
 
 interface PageMoveButtonProps {
-  href: "" | "/quiz";
+  href: '' | '/quiz';
   title: string;
   answers?: AnswersType[];
   className?: string;

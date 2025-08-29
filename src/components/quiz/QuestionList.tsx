@@ -1,14 +1,13 @@
-"use client";
+'use client';
 
-import { useState } from "react";
-import { AnimatePresence } from "motion/react";
-import QuestionStep from "./QuestionStep";
-import { ProgressBar } from "./ProgressBar";
-import { Tweights } from "@/models/type";
-import { useRouter } from "next/navigation";
-import { usePageTransition } from "@/contexts/PageTransitionContext";
-import fetchData from "@/apis/fetch";
-
+import fetchData from '@/apis/fetch';
+import { usePageTransition } from '@/contexts/PageTransitionContext';
+import { Tweights } from '@/models/type';
+import { AnimatePresence } from 'motion/react';
+import { useRouter } from 'next/navigation';
+import { useState } from 'react';
+import { ProgressBar } from './ProgressBar';
+import QuestionStep from './QuestionStep';
 
 interface QuestionListProps {
   scripts: {
@@ -43,15 +42,15 @@ export default function QuestionList({ scripts }: QuestionListProps) {
     newAnswers[step - 1] = {
       id: optionId,
       weights:
-        currentScript.options.find((option) => option.id === optionId)
-          ?.weights || {},
+        currentScript.options.find(option => option.id === optionId)?.weights ||
+        {},
     };
     setAnswers(newAnswers);
   };
 
   const handleNextButton = async () => {
     if (step < scripts.length) {
-      setStep((prevStep) => {
+      setStep(prevStep => {
         const newStep = prevStep + 1;
         return newStep;
       });
@@ -76,22 +75,22 @@ export default function QuestionList({ scripts }: QuestionListProps) {
       }
 
       try {
-        const result = await fetchData(`/results`, "POST", { weights });
+        const result = await fetchData(`/results`, 'POST', { weights });
         const type = result.type as string;
         const href = `/results/${type}`;
-        localStorage.setItem("weights", JSON.stringify(weights));
+        localStorage.setItem('weights', JSON.stringify(weights));
         triggerTransition(() => {
           router.push(href);
         });
       } catch (err) {
-        console.error("API 요청 실패:", err);
+        console.error('API 요청 실패:', err);
       }
     }
   };
 
   const handlePrevButton = async () => {
     if (step > 1) {
-      setStep((prevStep) => {
+      setStep(prevStep => {
         const newStep = prevStep - 1;
         return newStep;
       });
@@ -110,5 +109,5 @@ export default function QuestionList({ scripts }: QuestionListProps) {
         />
       </AnimatePresence>
     </div>
-  ); 
+  );
 }

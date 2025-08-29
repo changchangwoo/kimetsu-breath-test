@@ -1,4 +1,6 @@
 import { TBreathingDetails, Ttypes } from '@/models/type';
+import { FaGithub } from 'react-icons/fa';
+import { FaPencil } from 'react-icons/fa6';
 import ButtonShare from '../share/ButtonShare';
 import { ResultHeader } from './ResultHeader';
 import { ResultSuccessor } from './ResultSuccessor';
@@ -37,11 +39,7 @@ export function Section02({
       <ResultKeywords keywords={keywords} />
       <ResultSuccessor breathingName={breathingName} type={type} />
       <ResultShare />
-      <footer className="text-extraSmall w-full flex flex-col items-center justify-center font-nanum text-lightGray/40">
-        <h3>changchangwoo@naver.com</h3>
-        <h3>changchangwoo@velog.io</h3>
-        <h3>changchangwoo@github.com</h3>
-      </footer>
+      <Footer />
     </div>
   );
 }
@@ -92,5 +90,31 @@ export function ResultShare() {
       </h1>
       <ButtonShare isResult={true} />
     </div>
+  );
+}
+
+export function Footer() {
+  return (
+    <footer className="text-extraSmall w-full flex flex-col items-center justify-center font-nanum text-lightGray/40">
+      <a
+        href="https://github.com/changchangwoo/kimetsu-breath-test"
+        className="flex items-center gap-2"
+      >
+        <FaGithub />
+        changchangwoo/github.io
+      </a>
+      <a
+        href="https://velog.io/@changwoo/posts"
+        className="flex items-center gap-2"
+      >
+        <FaPencil />
+        velog.io/@changwoo
+      </a>{' '}
+      <h3 className="text-extraSmall text-lightGray/40 font-nanum leading-tight text-center mt-2">
+        본 사이트의 모든 설정 및 저작권은 ‘귀멸의 칼날’ 원작자에 귀속되며,
+        <br />
+        비영리로서 오직 팬 활동 목적으로만 운영됩니다.
+      </h3>
+    </footer>
   );
 }

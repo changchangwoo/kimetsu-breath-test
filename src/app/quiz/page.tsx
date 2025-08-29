@@ -1,6 +1,6 @@
-import PageTransition from "@/animation/PageTransition";
-import QuestionList from "@/components/QuestionList";
-import scripts from "@/data/script.json";
+import PageTransition from '@/animation/PageTransition';
+import QuestionList from '@/components/quiz/QuestionList';
+import scripts from '@/data/script.json';
 
 export default function Test() {
   return (
@@ -11,4 +11,3 @@ export default function Test() {
     </PageTransition>
   );
 }
-

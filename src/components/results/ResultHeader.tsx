@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import WeightGraph from "../weightsGraph";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState } from 'react';
+import WeightGraph from '../quiz/weightsGraph';
 
 interface ResultHeaderProps {
   summary: string;
-  summarySize: "text-smallTitle" | "text-title";
+  summarySize: 'text-smallTitle' | 'text-title';
 }
 
 export function ResultHeader({
   summary,
-  summarySize = "text-title",
+  summarySize = 'text-title',
 }: ResultHeaderProps) {
   const [showGraph, setShowGraph] = useState(false);
   const graphRef = useRef<HTMLDivElement | null>(null);
@@ -19,7 +19,7 @@ export function ResultHeader({
     if (!graphRef.current) return;
 
     const observer = new IntersectionObserver(
-      (entries) => {
+      entries => {
         if (entries[0].isIntersecting) {
           setShowGraph(true);
           observer.disconnect();
@@ -41,7 +41,7 @@ export function ResultHeader({
         “{summary}”
       </h1>
 
-      <div ref={graphRef} style={{ minHeight: "24rem" }}>
+      <div ref={graphRef} style={{ minHeight: '24rem' }}>
         {showGraph && <WeightGraph />}
       </div>
     </>
