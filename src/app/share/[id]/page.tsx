@@ -18,6 +18,8 @@ export default function SharePage({ params }: PageProps) {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  console.log(result);
+
   useEffect(() => {
     async function loadData() {
       try {
@@ -31,7 +33,6 @@ export default function SharePage({ params }: PageProps) {
         setLoading(false);
       }
     }
-
     loadData();
   }, [params]);
 

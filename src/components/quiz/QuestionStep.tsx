@@ -3,7 +3,7 @@
 import RightToLeft from '@/animation/RightToLeft';
 import SelectedItem from '@/animation/SelectedItem';
 import Image from 'next/image';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 interface QuestionStepProps {
   script: {
@@ -15,20 +15,21 @@ interface QuestionStepProps {
       weights: { [key: string]: number | undefined };
     }[];
   };
-  onSelectOption: (optionId: string) => void;
+  handleSelectOption: (optionId: string, activeDetermination: boolean) => void;
   handleNextButton: () => void;
 }
 
 const QuestionStep = ({
   script,
-  onSelectOption,
+  handleSelectOption,
   handleNextButton,
 }: QuestionStepProps) => {
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  const [activeDetermination, setactiveDetermination] = useState<boolean>(true);
 
   const handleOptionClick = (optionId: string) => {
     setSelectedId(optionId);
-    onSelectOption(optionId);
+    handleSelectOption(optionId, activeDetermination);
   };
 
   const handleSelectAnimationComplete = () => {
@@ -36,6 +37,12 @@ const QuestionStep = ({
       handleNextButton();
     }, 200);
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      setactiveDetermination(false);
+    }, 6000);
+  }, []);
 
   return (
     <div className="flex flex-col">

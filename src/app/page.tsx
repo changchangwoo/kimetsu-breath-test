@@ -24,11 +24,7 @@ export default async function Home() {
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
-          <div
-            className="mb-14 w-full h-48 rounded-md
-        bg-[url('../../public/imgs/main.png')] bg-cover bg-center
-        "
-          ></div>
+          <div className="mb-14 w-full h-48 rounded-md bg-[url('../../public/imgs/main.png')] bg-cover bg-center"></div>
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
@@ -39,7 +35,8 @@ export default async function Home() {
           <PageMoveButton
             href="/quiz"
             title="테스트 시작하기"
-            className="mb-14"
+            className="mb-14 active:bg-lightGray/5
+            cursor-pointer hover:scale-105 duration-75"
           />
         </BottomUp>
 
@@ -48,7 +45,7 @@ export default async function Home() {
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
-          <h3 className="text-extraSmall text-gray font-nanum leading-tight mt-20">
+          <h3 className="text-extraSmall text-gray font-nanum leading-tight mt-20 ">
             본 사이트의 모든 설정 및 저작권은 ‘귀멸의 칼날’ 원작자에 귀속되며,
             <br />
             비영리로서 오직 팬 활동 목적으로만 운영됩니다.

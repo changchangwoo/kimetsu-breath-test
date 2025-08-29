@@ -5,7 +5,7 @@ import { usePageTransition } from '@/contexts/PageTransitionContext';
 import { Tweights } from '@/models/type';
 import { AnimatePresence } from 'motion/react';
 import { useRouter } from 'next/navigation';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { ProgressBar } from './ProgressBar';
 import QuestionStep from './QuestionStep';
 
@@ -27,33 +27,56 @@ export type AnswersType = {
 };
 
 export default function QuestionList({ scripts }: QuestionListProps) {
-  const [step, setStep] = useState(1);
   const router = useRouter();
-
+  const [step, setStep] = useState(1);
   const [answers, setAnswers] = useState<AnswersType[]>(
     Array(scripts.length).fill(null)
   );
-
-  const currentScript = scripts[step - 1];
   const { triggerTransition } = usePageTransition();
 
-  const handleSelectOption = (optionId: string) => {
+  const currentScript = scripts[step - 1];
+
+  useEffect(() => {
+    window.history.replaceState({ step }, '');
+
+    const onPopState = (event: PopStateEvent) => {
+      if (event.state?.step) {
+        setStep(event.state.step);
+      }
+    };
+
+    window.addEventListener('popstate', onPopState);
+    return () => window.removeEventListener('popstate', onPopState);
+  }, []);
+
+  const pushStepToHistory = (newStep: number) => {
+    window.history.pushState({ step: newStep }, '');
+  };
+
+  const handleSelectOption = (
+    optionId: string,
+    activeDetermination: boolean
+  ) => {
     const newAnswers = [...answers];
+
     newAnswers[step - 1] = {
       id: optionId,
       weights:
         currentScript.options.find(option => option.id === optionId)?.weights ||
         {},
     };
+    if (activeDetermination) {
+      newAnswers[step - 1].weights['결단'] = 1;
+    }
+    console.log(newAnswers);
     setAnswers(newAnswers);
   };
 
   const handleNextButton = async () => {
     if (step < scripts.length) {
-      setStep(prevStep => {
-        const newStep = prevStep + 1;
-        return newStep;
-      });
+      const newStep = step + 1;
+      setStep(newStep);
+      pushStepToHistory(newStep);
     } else if (step === scripts.length) {
       const weights: { [key in Tweights]: number } = {
         침착: 0,
@@ -76,6 +99,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
 
       try {
         const result = await fetchData(`/results`, 'POST', { weights });
+        console.log(result);
         const type = result.type as string;
         const href = `/results/${type}`;
         localStorage.setItem('weights', JSON.stringify(weights));
@@ -88,12 +112,11 @@ export default function QuestionList({ scripts }: QuestionListProps) {
     }
   };
 
-  const handlePrevButton = async () => {
+  const handlePrevButton = () => {
     if (step > 1) {
-      setStep(prevStep => {
-        const newStep = prevStep - 1;
-        return newStep;
-      });
+      const newStep = step - 1;
+      setStep(newStep);
+      pushStepToHistory(newStep); // 뒤로 가기 버튼으로도 상태 반영
     }
   };
 
@@ -104,7 +127,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
         <QuestionStep
           key={step}
           script={currentScript}
-          onSelectOption={handleSelectOption}
+          handleSelectOption={handleSelectOption}
           handleNextButton={handleNextButton}
         />
       </AnimatePresence>
