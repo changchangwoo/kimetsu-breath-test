@@ -45,7 +45,7 @@ export default async function Home() {
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
-          <h3 className="text-xs sm:text-extraSmall text-gray font-nanum leading-tight mt-5 sm:mt-20 px-2">
+          <h3 className="text-xs sm:text-extraSmall text-gray font-nanum leading-tight mt-12 sm:mt-20 px-2">
             모든 설정 및 저작권은 '귀멸의 칼날' 원작자에 귀속되며,
             <br />
             비영리로서 오직 팬 활동 목적으로만 운영됩니다.

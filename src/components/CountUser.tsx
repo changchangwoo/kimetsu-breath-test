@@ -27,7 +27,7 @@ export default function CountUser() {
     <h2 className="mb-5 font-shilla text-medium text-lightGray">
       {countUser
         ? `현재 호흡을 계승한 인원 ${countUser}명`
-        : `현재 호흡을 계승항 인원 --명`}
+        : `현재 호흡을 계승한 인원 --명`}
     </h2>
   );
 }

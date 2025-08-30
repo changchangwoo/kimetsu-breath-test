@@ -1,3 +1,4 @@
+import ClientLoadingWrapper from '@/components/ClientLoadingWrapper';
 import { PageTransitionProvider } from '@/contexts/PageTransitionContext';
 import type { Metadata } from 'next';
 import Script from 'next/script';
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
     default: '귀멸의 칼날 호흡 성향 테스트 - 나는 어떤 호흡의 계승자일까?',
   },
   description:
-    '귀멸의 칼날 세계관에서 귀살대 대원이 되어 당신만의 호흡을 찾아보세요! 선택지를 통해 화염의 호흡, 물의 호흡, 번개의 호흡 등 당신에게 어울리는 호흡의 계승자를 알아보는 성향 테스트입니다.',
+    '귀멸의 칼날 세계관에서 귀살대 대원이 되어 당신만의 호흡을 찾아보세 요! 선택지를 통해 화염의 호흡, 물의 호흡, 번개의 호흡 등 당신에게 어울리는 호흡의 계승자를 알아보는 성향 테스트입니다.',
   keywords: [
     '귀멸의 칼날',
     '귀멸의 칼날 테스트',
@@ -49,13 +50,13 @@ export const metadata: Metadata = {
     siteName: '귀멸의 칼날 호흡 성향 테스트',
     images: [
       {
-        url: '/og-image.webp', // 메인 OG 이미지
+        url: '/og-image.webp',
         width: 1200,
         height: 630,
         alt: '귀멸의 칼날 호흡 성향 테스트',
       },
       {
-        url: '/og-image-square.webp', // 정사각형 버전
+        url: '/og-image-square.webp',
         width: 800,
         height: 800,
         alt: '귀멸의 칼날 호흡 성향 테스트',
@@ -70,10 +71,9 @@ export const metadata: Metadata = {
     description:
       '귀멸의 칼날 세계관에서 당신에게 어울리는 호흡의 계승자를 찾아보세요!',
     images: ['/og-image.webp'],
-    creator: '@your_twitter_handle', // 실제 트위터 핸들로 변경
+    creator: '@your_twitter_handle',
   },
 
-  // 추가 메타 태그들
   robots: {
     index: true,
     follow: true,
@@ -86,7 +86,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // 언어 및 지역
   alternates: {
     canonical: 'https://your-domain.com',
     languages: {
@@ -94,7 +93,6 @@ export const metadata: Metadata = {
     },
   },
 
-  // 앱 관련 (PWA 고려시)
   applicationName: '귀멸의 칼날 호흡 테스트',
   appleWebApp: {
     capable: true,
@@ -102,7 +100,6 @@ export const metadata: Metadata = {
     title: '귀멸의 칼날 호흡 테스트',
   },
 
-  // 기타
   category: 'Entertainment',
   classification: 'Personality Test',
 };
@@ -115,7 +112,6 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
-        {/* 추가 메타 태그들 */}
         <meta name="theme-color" content="#1a1a2e" />
         <meta name="msapplication-TileColor" content="#1a1a2e" />
 
@@ -125,7 +121,46 @@ export default function RootLayout({
         <link rel="apple-touch-icon" href="/apple-touch-icon.webp" />
         <link rel="manifest" href="/manifest.json" />
 
-        {/* 구조화된 데이터 (JSON-LD) */}
+        {/* 중요한 리소스들 preload */}
+        <link rel="preload" href="/imgs/bg.webp" as="image" />
+        {/* 사용하는 폰트가 있다면 여기에 추가 */}
+        <link
+          rel="preload"
+          href="/fonts/NanumMyeongjo.otf"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/NanumMyeongjoBold.otf"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/NanumMyeongjoExtraBold.otf"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Shilla_Culture(B).ttf"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/Shilla_Culture(M).ttf"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
+
+        {/* 구조화된 데이터 */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -161,7 +196,10 @@ export default function RootLayout({
             type="module"
             strategy="beforeInteractive"
           />
-          <PageTransitionProvider>{children}</PageTransitionProvider>
+
+          <ClientLoadingWrapper>
+            <PageTransitionProvider>{children}</PageTransitionProvider>
+          </ClientLoadingWrapper>
         </div>
       </body>
     </html>
