@@ -68,7 +68,6 @@ export default function QuestionList({ scripts }: QuestionListProps) {
     if (activeDetermination) {
       newAnswers[step - 1].weights['결단'] = 1;
     }
-    console.log(newAnswers);
     setAnswers(newAnswers);
   };
 
@@ -99,7 +98,6 @@ export default function QuestionList({ scripts }: QuestionListProps) {
 
       try {
         const result = await fetchData(`/results`, 'POST', { weights });
-        console.log(result);
         const type = result.type as string;
         const href = `/results/${type}`;
         localStorage.setItem('weights', JSON.stringify(weights));
@@ -121,7 +119,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
   };
 
   return (
-    <div className="w-full h-screen flex flex-col items-center py-10 ">
+    <div className="w-full h-dvh flex flex-col items-center py-5 sm:py-10 ">
       <ProgressBar step={step} maxStep={scripts.length} />
       <AnimatePresence mode="wait">
         <QuestionStep

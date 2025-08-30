@@ -1,6 +1,6 @@
-"use client";
-import { motion } from "motion/react";
-import { ReactNode, useState, useEffect } from "react";
+'use client';
+import { motion } from 'motion/react';
+import { ReactNode, useEffect, useState } from 'react';
 
 interface IProps {
   children: ReactNode;
@@ -16,8 +16,8 @@ export default function SelectedItem({
   onSelectAnimationComplete,
 }: IProps) {
   const [animationState, setAnimationState] = useState<
-    "initial" | "selected" | "deselected"
-  >("initial");
+    'initial' | 'selected' | 'deselected'
+  >('initial');
 
   const itemVariants = {
     initial: {
@@ -44,14 +44,14 @@ export default function SelectedItem({
 
   useEffect(() => {
     if (!hasAnySelection) {
-      setAnimationState("initial");
+      setAnimationState('initial');
     } else {
-      setAnimationState(isSelected ? "selected" : "deselected");
+      setAnimationState(isSelected ? 'selected' : 'deselected');
     }
   }, [isSelected, hasAnySelection]);
 
   const handleAnimationComplete = () => {
-    if (animationState === "selected" && onSelectAnimationComplete) {
+    if (animationState === 'selected' && onSelectAnimationComplete) {
       onSelectAnimationComplete();
     }
   };
@@ -59,7 +59,7 @@ export default function SelectedItem({
   return (
     <motion.div
       className={`w-full h-auto ${
-        animationState !== "initial" && "pointer-events-none"
+        animationState !== 'initial' && 'pointer-events-none'
       }`}
       variants={itemVariants}
       initial="initial"

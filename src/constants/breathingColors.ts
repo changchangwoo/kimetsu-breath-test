@@ -2,7 +2,7 @@ import { Ttypes } from '@/models/type';
 
 export const breathingColors: Record<Ttypes, string> = {
   water: 'rgba(31, 83, 196, 0.7)', // 물 - 딥 블루
-  fire: 'rgba(233, 79, 27, 0.7)', // 화염 - 붉음+주황 계열 (#E94F1B)
+  fire: 'rgba(255, 130, 1, 0.7)', // 불꽃 오렌지 (#FF8201)
   love: 'rgba(216, 97, 140, 0.7)', // 사랑 - 로즈핑크 톤다운
   mist: 'rgba(62, 149, 146, 0.6)', // 안개 - 청록 계열 톤다운
   wind: 'rgba(29, 140, 98, 0.6)', // 바람 - 딥 그린
