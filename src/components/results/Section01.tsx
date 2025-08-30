@@ -1,6 +1,6 @@
-import BottomUp from "@/animation/BottomUp";
-import { Ttypes } from "@/models/type";
-import Image from "next/image";
+import BottomUp from '@/animation/BottomUp';
+import { Ttypes } from '@/models/type';
+import Image from 'next/image';
 
 interface Section01Props {
   breathingColor: string;
@@ -36,8 +36,9 @@ export function Section01({
       <BottomUp delay={(delay += step)}>
         <div className="w-full h-[353px] rounded-2xl relative overflow-hidden mt-12">
           <Image
-            src={`/imgs/result/${type}.png`}
+            src={`/imgs/result/${type}.webp`}
             alt={`${breathingName}의 결과 이미지`}
+            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
             fill
             className="object-cover relative"
             priority
