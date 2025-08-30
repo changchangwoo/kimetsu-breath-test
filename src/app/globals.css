@@ -1,31 +1,50 @@
 @import 'tailwindcss';
 
+/* ----------------------------
+   폰트 정의
+---------------------------- */
 @font-face {
-  font-family: nanum;
-  src: url(../../public/fonts/NanumMyeongjo.otf);
+  font-family: 'nanum';
+  font-weight: 700;
+  src: url('https://cdn.jsdelivr.net/gh/wizfile/font/NanumMyeongjo.woff')
+    format('woff');
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-  font-family: nanumB;
-  src: url(../../public//fonts/NanumMyeongjoBold.otf);
-}
-@font-face {
-  font-family: shilla;
-  src: url(../../public/fonts/Shilla_Culture\(B\).ttf);
+  font-family: 'nanumB';
+  font-weight: 800;
+  src: url('https://cdn.jsdelivr.net/gh/wizfile/font/NanumMyeongjo.woff')
+    format('woff');
+  font-style: normal;
+  font-display: swap;
 }
 
+@font-face {
+  font-family: 'shilla';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/Shilla_CultureB-Bold.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-display: swap;
+}
+
+/* ----------------------------
+   CSS 변수 정의
+---------------------------- */
 @theme {
   /* 폰트 설정 */
-  --font-nanum: 'nanum';
-  --font-nanumB: 'nanumB';
-  --font-shilla: 'shilla';
+  --font-nanum: 'nanum', sans-serif;
+  --font-nanumB: 'nanumB', sans-serif;
+  --font-shilla: 'shilla', sans-serif;
 
+  /* 색상 */
   --color-white: #ffffff;
   --color-lightGray: #e1e1e1;
   --color-gray: #8d8d8d;
   --color-border: #999999;
 
-  /* 또는 기존 시스템에 추가 */
+  /* 폰트 크기 */
   --text-extraTitle: 48px;
   --text-title: 36px;
   --text-mobileTitle: 32px;
