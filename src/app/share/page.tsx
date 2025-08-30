@@ -1,7 +1,8 @@
 'use client';
 
 import fetchData from '@/apis/fetch';
-import { useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import { Suspense, useEffect, useState } from 'react';
 
 interface ResultData {
   id: string;
@@ -9,21 +10,23 @@ interface ResultData {
   type: string;
 }
 
-interface PageProps {
-  params: Promise<{ id: string }>;
-}
+function ShareContent() {
+  const searchParams = useSearchParams();
+  const id = searchParams.get('id');
 
-export default function SharePage({ params }: PageProps) {
   const [result, setResult] = useState<ResultData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
 
-  console.log(result);
-
   useEffect(() => {
     async function loadData() {
+      if (!id) {
+        setError(true);
+        setLoading(false);
+        return;
+      }
+
       try {
-        const { id } = await params;
         const data = await fetchData(`/results/${id}`);
         setResult(data);
       } catch (err) {
@@ -34,7 +37,7 @@ export default function SharePage({ params }: PageProps) {
       }
     }
     loadData();
-  }, [params]);
+  }, [id]);
 
   if (loading) {
     return (
@@ -55,8 +58,17 @@ export default function SharePage({ params }: PageProps) {
   return (
     <div className="h-dvh flex flex-col justify-center items-center gap-5">
       <h1>결과 ID: {result.id}</h1>
-      {/* <h1>결과 data: {result.weights}</h1> */}
       <h1>결과 data: {result.type}</h1>
     </div>
   );
 }
+
+export default function SharePage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ShareContent />
+    </Suspense>
+  );
+}
+
+// 사용: /share?id=123
