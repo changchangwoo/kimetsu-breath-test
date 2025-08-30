@@ -24,7 +24,7 @@ export default async function Home() {
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
-          <div className="mb-8 sm:mb-14 w-full max-w-md aspect-[16/9] rounded-md bg-[url('../../public/imgs/main.png')] bg-cover bg-center"></div>
+          <div className="mb-8 sm:mb-14 w-full max-w-md aspect-[16/9] rounded-md bg-[url('../../public/imgs/main.webp')] bg-cover bg-center"></div>
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>

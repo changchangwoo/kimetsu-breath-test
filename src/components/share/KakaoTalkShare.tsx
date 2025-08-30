@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import Script from "next/script";
+import Script from 'next/script';
 
 const KakaoShareButton = ({
-  title = "딸기 치즈 케익",
-  description = "#케익 #딸기 #삼평동 #카페 #분위기 #소개팅",
-  imageUrl = "http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.png",
-  webUrl = "https://developers.kakao.com",
-  mobileWebUrl = "https://developers.kakao.com",
+  title = '딸기 치즈 케익',
+  description = '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
+  imageUrl = 'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.webp',
+  webUrl = 'https://developers.kakao.com',
+  mobileWebUrl = 'https://developers.kakao.com',
   likeCount = 286,
   commentCount = 45,
   sharedCount = 845,
-  buttonText = "웹으로 보기",
-  appButtonText = "앱으로 보기",
+  buttonText = '웹으로 보기',
+  appButtonText = '앱으로 보기',
 }) => {
   const KAKAO_JAVASCRIPT_KEY = process.env.NEXT_PUBLIC_API_KAKAO_SHARE;
 
@@ -23,8 +23,8 @@ const KakaoShareButton = ({
 
     if (window.Kakao && window.Kakao.Share) {
       window.Kakao.Share.createDefaultButton({
-        container: "#kakaotalk-sharing-btn",
-        objectType: "feed",
+        container: '#kakaotalk-sharing-btn',
+        objectType: 'feed',
         content: {
           title,
           description,

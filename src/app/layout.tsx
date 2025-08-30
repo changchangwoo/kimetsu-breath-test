@@ -49,13 +49,13 @@ export const metadata: Metadata = {
     siteName: '귀멸의 칼날 호흡 성향 테스트',
     images: [
       {
-        url: '/og-image.jpg', // 메인 OG 이미지
+        url: '/og-image.webp', // 메인 OG 이미지
         width: 1200,
         height: 630,
         alt: '귀멸의 칼날 호흡 성향 테스트',
       },
       {
-        url: '/og-image-square.jpg', // 정사각형 버전
+        url: '/og-image-square.webp', // 정사각형 버전
         width: 800,
         height: 800,
         alt: '귀멸의 칼날 호흡 성향 테스트',
@@ -69,7 +69,7 @@ export const metadata: Metadata = {
     title: '귀멸의 칼날 호흡 성향 테스트 - 나는 어떤 호흡의 계승자일까?',
     description:
       '귀멸의 칼날 세계관에서 당신에게 어울리는 호흡의 계승자를 찾아보세요!',
-    images: ['/og-image.jpg'],
+    images: ['/og-image.webp'],
     creator: '@your_twitter_handle', // 실제 트위터 핸들로 변경
   },
 
@@ -122,7 +122,7 @@ export default function RootLayout({
         {/* 파비콘 */}
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.webp" />
         <link rel="manifest" href="/manifest.json" />
 
         {/* 구조화된 데이터 (JSON-LD) */}
@@ -153,7 +153,7 @@ export default function RootLayout({
       </head>
 
       <body className="relative min-h-screen max-w-[400px] m-auto">
-        <div className="fixed inset-0 bg-[url('../../public/imgs/bg.jpg')] bg-repeat bg-auto -z-10" />
+        <div className="fixed inset-0 bg-[url('../../public/imgs/bg.webp')] bg-repeat bg-auto -z-10" />
 
         <div className="relative z-10">
           <Script

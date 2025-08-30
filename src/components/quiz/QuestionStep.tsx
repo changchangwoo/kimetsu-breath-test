@@ -55,7 +55,7 @@ const QuestionStep = ({
       <RightToLeft delay={0.3}>
         <div className="w-full h-48 aspect-video rounded-2xl relative overflow-hidden mb-10">
           <Image
-            src={`/imgs/q${script.id}.jpg`}
+            src={`/imgs/q${script.id}.webp`}
             alt={`질문 ${script.id} 배경 이미지`}
             fill
             className="object-cover relative"

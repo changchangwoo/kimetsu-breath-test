@@ -33,7 +33,7 @@
       },
       {
         "name": "무라타",
-        "image": "/imgs/succesor/murata.png",
+        "image": "/imgs/succesor/murata.webp",
         "description": "귀살대 대원"
       }
     ],
@@ -45,7 +45,7 @@
       },
       {
         "name": "렌고쿠 신쥬로",
-        "image": "/imgs/succesor/shinjyuro.png",
+        "image": "/imgs/succesor/shinjyuro.webp",
         "description": "전 염주"
       },
       {
@@ -62,7 +62,7 @@
       },
       {
         "name": "쿠와지마 지고로",
-        "image": "/imgs/succesor/Jigoro.png",
+        "image": "/imgs/succesor/Jigoro.webp",
         "description": "전 명주"
       },
       {
@@ -122,7 +122,7 @@
       },
       {
         "name": "코쵸우 카나에",
-        "image": "/imgs/succesor/kanae.png",
+        "image": "/imgs/succesor/kanae.webp",
         "description": "전 화주"
       },
       {
