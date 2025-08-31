@@ -1,6 +1,6 @@
-"use client";
-import { motion } from "motion/react";
-import { ReactNode } from "react";
+'use client';
+import { motion } from 'motion/react';
+import { ReactNode } from 'react';
 
 interface IProps {
   children: ReactNode;

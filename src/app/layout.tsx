@@ -43,20 +43,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://your-domain.com',
+    url: 'https://kimetsu-breath-test',
     title: '귀멸의 칼날 호흡 성향 테스트 - 나는 어떤 호흡의 계승자일까?',
     description:
       '귀멸의 칼날 세계관에서 귀살대 대원이 되어 당신만의 호흡을 찾아보세요! 선택지를 통해 당신에게 어울리는 호흡의 계승자를 알아보는 성향 테스트입니다.',
     siteName: '귀멸의 칼날 호흡 성향 테스트',
     images: [
       {
-        url: '/og-image.webp',
+        url: '/imgs/OG_01.webp',
         width: 1200,
         height: 630,
         alt: '귀멸의 칼날 호흡 성향 테스트',
       },
       {
-        url: '/og-image-square.webp',
+        url: '/imgs/OG_02.webp',
         width: 800,
         height: 800,
         alt: '귀멸의 칼날 호흡 성향 테스트',
@@ -70,7 +70,7 @@ export const metadata: Metadata = {
     title: '귀멸의 칼날 호흡 성향 테스트 - 나는 어떤 호흡의 계승자일까?',
     description:
       '귀멸의 칼날 세계관에서 당신에게 어울리는 호흡의 계승자를 찾아보세요!',
-    images: ['/og-image.webp'],
+    images: ['/imgs/OG_01.webp'],
     creator: '@your_twitter_handle',
   },
 
@@ -87,9 +87,9 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: 'https://your-domain.com',
+    canonical: 'https://kimetsu-breath-test',
     languages: {
-      'ko-KR': 'https://your-domain.com',
+      'ko-KR': 'https://kimetsu-breath-test',
     },
   },
 
@@ -123,7 +123,7 @@ export default function RootLayout({
           type="image/png"
         />
 
-        <link rel="manifest" href="/manifest.json" />
+        {/* <link rel="manifest" href="/manifest.json" /> */}
 
         <link rel="preload" href="/imgs/bg.webp" as="image" />
         <script
@@ -135,7 +135,7 @@ export default function RootLayout({
               name: '귀멸의 칼날 호흡 성향 테스트',
               description:
                 '귀멸의 칼날 세계관에서 당신에게 어울리는 호흡의 계승자를 찾아보는 성향 테스트',
-              url: 'https://your-domain.com',
+              url: 'https://kimetsu-breath-test',
               applicationCategory: 'Entertainment',
               operatingSystem: 'Any',
               offers: {
@@ -152,8 +152,8 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="relative min-h-screen max-w-[400px] m-auto">
-        <div className="fixed inset-0 bg-[url('../../public/imgs/bg.webp')] bg-repeat bg-auto -z-10" />
+      <body className="relative min-h-screen max-w-[400px] m-auto ">
+        <div className="fixed inset-0 bg-[url('/imgs/bg.webp')] bg-repeat bg-auto -z-10" />
 
         <div className="relative z-10">
           <Script

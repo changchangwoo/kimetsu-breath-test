@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { useEffect, useState } from "react";
-import KakaoShareButton from "./KakaoTalkShare";
+import React, { useEffect, useState } from 'react';
+import KakaoShareButton from './KakaoTalkShare';
 
 interface ShareButtonProps {
   url?: string;
@@ -11,21 +11,21 @@ interface ShareButtonProps {
 }
 
 export const XShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== "undefined" ? window.location.href : "",
-  text = "이 페이지를 확인해보세요!",
-  className = "",
+  url = typeof window !== 'undefined' ? window.location.href : '',
+  text = '이 페이지를 확인해보세요!',
+  className = '',
 }) => {
   const handleShare = () => {
     const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
       url
     )}&text=${encodeURIComponent(text)}`;
-    window.open(shareUrl, "_blank", "width=600,height=400");
+    window.open(shareUrl, '_blank', 'width=600,height=400');
   };
 
   return (
     <button
       onClick={handleShare}
-      className={`bg-black w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-gray-800 transition-colors ${className}`}
+      className={`hover:scale-105 cursor-pointer bg-black w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-gray-800 transition-colors ${className}`}
       aria-label="X(트위터)에 공유하기"
     >
       <svg
@@ -45,39 +45,39 @@ export const XShareButton: React.FC<ShareButtonProps> = ({
 };
 
 export const ThreadsShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== "undefined" ? window.location.href : "",
-  text = "이 페이지를 확인해보세요!",
-  className = "",
+  url = typeof window !== 'undefined' ? window.location.href : '',
+  text = '이 페이지를 확인해보세요!',
+  className = '',
 }) => {
   const handleShare = () => {
     const shareUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(
-      text + " " + url
+      text + ' ' + url
     )}`;
-    window.open(shareUrl, "_blank", "width=600,height=400");
+    window.open(shareUrl, '_blank', 'width=600,height=400');
   };
 
   return (
     <button
       onClick={handleShare}
-      className={`bg-white w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-gray-100 transition-colors ${className}`}
+      className={`hover:scale-105 cursor-pointer bg-white w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-gray-100 transition-colors ${className}`}
       aria-label="Threads에 공유하기"
     ></button>
   );
 };
 
 export const NativeShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== "undefined" ? window.location.href : "",
-  text = "이 페이지를 확인해보세요!",
-  className = "",
+  url = typeof window !== 'undefined' ? window.location.href : '',
+  text = '이 페이지를 확인해보세요!',
+  className = '',
 }) => {
   const [isSupported, setIsSupported] = useState(false);
-  const title = "페이지 공유";
+  const title = '페이지 공유';
 
   useEffect(() => {
     if (
-      typeof window !== "undefined" &&
-      "navigator" in window &&
-      "share" in navigator
+      typeof window !== 'undefined' &&
+      'navigator' in window &&
+      'share' in navigator
     ) {
       setIsSupported(true);
     }
@@ -90,7 +90,7 @@ export const NativeShareButton: React.FC<ShareButtonProps> = ({
         text,
         url,
       });
-      console.log("공유 성공!");
+      console.log('공유 성공!');
     }
   };
 
@@ -101,7 +101,7 @@ export const NativeShareButton: React.FC<ShareButtonProps> = ({
   return (
     <button
       onClick={handleShare}
-      className={`bg-border w-9 h-9 rounded-full border border-border flex items-center justify-center transition-colors ${className}`}
+      className={`hover:scale-105 cursor-pointer bg-lightGray/20 w-9 h-9 rounded-full border border-border flex items-center justify-center transition-colors ${className}`}
       aria-label="브라우저 공유하기"
     >
       <svg
@@ -125,8 +125,8 @@ const ButtonShare: React.FC<{
   text?: string;
   isResult?: boolean;
 }> = ({
-  url = typeof window !== "undefined" ? window.location.href : "",
-  text = "이 페이지를 확인해보세요!",
+  url = typeof window !== 'undefined' ? window.location.href : '',
+  text = '이 페이지를 확인해보세요!',
   isResult = false,
 }) => {
   return (

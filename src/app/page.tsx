@@ -14,7 +14,8 @@ export default async function Home() {
         className="
     px-4 sm:px-5
     py-12 sm:py-20
-    h-dvh flex flex-col text-center items-center overflow-y-hidden"
+    h-dvh flex flex-col text-center items-center
+    justify-center"
       >
         <BottomUp delay={delay}>
           <h1 className="mb-6 sm:mb-10 text-mobileTitle sm:text-title font-shilla text-lightGray leading-tight">
@@ -24,7 +25,7 @@ export default async function Home() {
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
-          <div className="mb-8 sm:mb-14 w-full max-w-md aspect-[16/9] rounded-md bg-[url('../../public/imgs/main.webp')] bg-cover bg-center"></div>
+          <div className="mb-8 sm:mb-14 w-full max-w-md aspect-[16/7] rounded-md bg-[url('../../public/imgs/main.webp')] bg-cover bg-center"></div>
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
@@ -45,7 +46,7 @@ export default async function Home() {
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
-          <h3 className="text-xs sm:text-extraSmall text-gray font-nanum leading-tight mt-12 sm:mt-20 px-2">
+          <h3 className="text-xs sm:text-extraSmall text-gray font-nanum leading-tight mt-10 sm:mt-20 px-2">
             모든 설정 및 저작권은 '귀멸의 칼날' 원작자에 귀속되며,
             <br />
             비영리로서 오직 팬 활동 목적으로만 운영됩니다.

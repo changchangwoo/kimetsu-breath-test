@@ -41,19 +41,24 @@ const QuestionStep = ({
   useEffect(() => {
     setTimeout(() => {
       setactiveDetermination(false);
-    }, 6000);
+    }, 9000);
   }, []);
 
+  const normalizedOptions = Array.from({ length: 4 }, (_, index) => {
+    const option = script.options[index];
+    return option || { id: `empty-${index}`, text: '', weights: {} };
+  });
+
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col w-full px-5">
       <RightToLeft delay={0.2}>
-        <h1 className="text-center text-white font-shilla text-large whitespace-pre-line mb-10">
+        <h1 className="min-h-[60px] text-center text-white font-shilla text-large whitespace-pre-line mb-7">
           {script.question}
         </h1>
       </RightToLeft>
 
       <RightToLeft delay={0.3}>
-        <div className="w-full h-48 aspect-video rounded-2xl relative overflow-hidden mb-10">
+        <div className="w-full h-48 aspect-video rounded-2xl relative overflow-hidden mb-5">
           <Image
             src={`/imgs/q${script.id}.webp`}
             alt={`질문 ${script.id} 배경 이미지`}
@@ -65,7 +70,7 @@ const QuestionStep = ({
       </RightToLeft>
 
       <ul className="flex flex-col gap-3">
-        {script.options.map((option, idx) => (
+        {normalizedOptions.map((option, idx) => (
           <RightToLeft delay={0.3 + 0.05 * idx} key={option.id}>
             <SelectedItem
               isSelected={selectedId === option.id}
@@ -78,13 +83,20 @@ const QuestionStep = ({
             >
               <li
                 className={`flex items-center justify-center border rounded-2xl
-                  w-[92%]
+                  w-full
                   mx-auto
                 cursor-pointer transition-all hover:scale-105 font-nanumB text-center
                  text-white py-2 whitespace-pre-line text-descript
                  bg-lightGray/20 border-border/50
+                 ${
+                   option.text === ''
+                     ? 'opacity-0 pointer-events-none h-[38.33px]'
+                     : ''
+                 }
                 `}
-                onClick={() => handleOptionClick(option.id)}
+                onClick={() =>
+                  option.text !== '' && handleOptionClick(option.id)
+                }
               >
                 {option.text}
               </li>

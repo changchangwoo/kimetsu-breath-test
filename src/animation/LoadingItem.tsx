@@ -29,7 +29,7 @@ export default function LoadingItem({
   return (
     <>
       <motion.div
-        className="w-full overscroll-y-none"
+        className="w-full overflow-y-hidden"
         variants={itemVariants}
         initial="initial"
         animate="animate"

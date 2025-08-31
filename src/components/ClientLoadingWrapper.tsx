@@ -23,7 +23,7 @@ const LoadingScreen = () => {
 
   return (
     <LoadingItem>
-      <div className="fixed inset-0 flex items-center justify-center">
+      <div className="fixed inset-0 flex items-center justify-center overflow-y-hidden">
         <h2 className="text-white text-xl font-bold font-shilla">불러오는중</h2>
       </div>
     </LoadingItem>
@@ -49,7 +49,11 @@ export default function ClientLoadingWrapper({
     };
 
     const checkImages = () => {
-      const criticalImages = ['/imgs/bg.webp', '/og-image.webp'];
+      const criticalImages = [
+        '/imgs/bg.webp',
+        '/imgs/OG_01.webp',
+        '/imgs/OG_02.webp',
+      ];
 
       const imagePromises = criticalImages.map(src => {
         return new Promise<void>(resolve => {
