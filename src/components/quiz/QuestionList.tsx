@@ -36,6 +36,14 @@ export default function QuestionList({ scripts }: QuestionListProps) {
 
   const currentScript = scripts[step - 1];
 
+  // 이게 가장 확실함
+  useEffect(() => {
+    if (currentScript.id < scripts.length) {
+      const img = new Image();
+      img.src = `/imgs/q${currentScript.id + 1}.webp`;
+    }
+  }, [currentScript.id]);
+
   useEffect(() => {
     window.history.replaceState({ step }, '');
 
@@ -107,14 +115,6 @@ export default function QuestionList({ scripts }: QuestionListProps) {
       } catch (err) {
         console.error('API 요청 실패:', err);
       }
-    }
-  };
-
-  const handlePrevButton = () => {
-    if (step > 1) {
-      const newStep = step - 1;
-      setStep(newStep);
-      pushStepToHistory(newStep); // 뒤로 가기 버튼으로도 상태 반영
     }
   };
 

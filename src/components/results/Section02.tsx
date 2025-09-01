@@ -5,8 +5,6 @@ import ButtonShare from '../share/ButtonShare';
 import { ResultHeader } from './ResultHeader';
 import { ResultSuccessor } from './ResultSuccessor';
 
-const css_subTitle = '';
-
 // 호흡 타입별 캐릭터 데이터
 
 interface Section02Props {
@@ -28,7 +26,7 @@ export function Section02({
   const isSmall = ['sun', 'insect', 'love', 'snake', 'flower'].includes(type);
   return (
     <div
-      className={`w-full py-10 px-5  h-auto flex flex-col gap-10`}
+      className={`w-full py-20 px-5  h-auto flex flex-col gap-10`}
       style={{ backgroundColor: breathingColor }}
     >
       <ResultHeader
@@ -110,7 +108,7 @@ export function Footer() {
         <FaPencil />
         velog.io/@changwoo
       </a>{' '}
-      <h3 className="text-extraSmall text-lightGray/40 font-nanum leading-tight text-center mt-2">
+      <h3 className="text-extraSmall text-lightGray/40 font-nanum leading-tight text-center mt-10">
         모든 설정 및 저작권은 ‘귀멸의 칼날’ 원작자에 귀속되며,
         <br />
         비영리로서 오직 팬 활동 목적으로만 운영됩니다.

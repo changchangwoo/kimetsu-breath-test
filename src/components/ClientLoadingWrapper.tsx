@@ -53,6 +53,7 @@ export default function ClientLoadingWrapper({
         '/imgs/bg.webp',
         '/imgs/OG_01.webp',
         '/imgs/OG_02.webp',
+        '/imgs/q1.webp',
       ];
 
       const imagePromises = criticalImages.map(src => {
@@ -79,7 +80,6 @@ export default function ClientLoadingWrapper({
   }, []);
 
   useEffect(() => {
-    console.log(fontsLoaded, imagesLoaded);
     if (fontsLoaded && imagesLoaded) {
       const timer = setTimeout(() => {
         setIsLoading(false);

@@ -36,7 +36,7 @@ export function ResultHeader({
   return (
     <>
       <h1
-        className={`font-shilla text-white mb-5 whitespace-pre-line ${summarySize} text-center`}
+        className={`font-shilla text-white whitespace-pre-line ${summarySize} text-center`}
       >
         “{summary}”
       </h1>

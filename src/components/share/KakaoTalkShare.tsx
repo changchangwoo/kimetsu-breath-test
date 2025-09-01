@@ -13,6 +13,9 @@ const KakaoShareButton = ({
   sharedCount = 845,
   buttonText = '웹으로 보기',
   appButtonText = '앱으로 보기',
+  url = '',
+  isResult = false,
+  text = '',
 }) => {
   const KAKAO_JAVASCRIPT_KEY = process.env.NEXT_PUBLIC_API_KAKAO_SHARE;
 

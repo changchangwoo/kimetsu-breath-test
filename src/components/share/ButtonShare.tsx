@@ -1,21 +1,24 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { BsThreads } from 'react-icons/bs';
 import KakaoShareButton from './KakaoTalkShare';
 
 interface ShareButtonProps {
-  url?: string;
   text?: string;
   className?: string;
   isResult?: boolean;
 }
 
 export const XShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== 'undefined' ? window.location.href : '',
   text = '이 페이지를 확인해보세요!',
   className = '',
+  isResult,
 }) => {
   const handleShare = () => {
+    let url = typeof window !== 'undefined' ? window.location.href : '';
+    if (isResult) url = 'hello';
+
     const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
       url
     )}&text=${encodeURIComponent(text)}`;
@@ -45,10 +48,12 @@ export const XShareButton: React.FC<ShareButtonProps> = ({
 };
 
 export const ThreadsShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== 'undefined' ? window.location.href : '',
   text = '이 페이지를 확인해보세요!',
   className = '',
+  isResult,
 }) => {
+  let url = typeof window !== 'undefined' ? window.location.href : '';
+
   const handleShare = () => {
     const shareUrl = `https://www.threads.net/intent/post?text=${encodeURIComponent(
       text + ' ' + url
@@ -61,17 +66,24 @@ export const ThreadsShareButton: React.FC<ShareButtonProps> = ({
       onClick={handleShare}
       className={`hover:scale-105 cursor-pointer bg-white w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-gray-100 transition-colors ${className}`}
       aria-label="Threads에 공유하기"
-    ></button>
+    >
+      <BsThreads />
+    </button>
   );
 };
 
 export const NativeShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== 'undefined' ? window.location.href : '',
   text = '이 페이지를 확인해보세요!',
   className = '',
+  isResult,
 }) => {
+  let url = typeof window !== 'undefined' ? window.location.href : '';
+
   const [isSupported, setIsSupported] = useState(false);
   const title = '페이지 공유';
+
+  if (isResult) {
+  }
 
   useEffect(() => {
     if (
@@ -85,6 +97,7 @@ export const NativeShareButton: React.FC<ShareButtonProps> = ({
 
   const handleShare = async () => {
     if (navigator.share) {
+      console.log(navigator.share);
       await navigator.share({
         title,
         text,
@@ -131,10 +144,10 @@ const ButtonShare: React.FC<{
 }) => {
   return (
     <div className="flex gap-2 justify-center">
-      <KakaoShareButton />
-      <XShareButton url={url} text={text} isResult={isResult} />
-      <ThreadsShareButton url={url} text={text} isResult={isResult} />
-      <NativeShareButton url={url} text={text} isResult={isResult} />
+      <KakaoShareButton text={text} isResult={isResult} />
+      <XShareButton text={text} isResult={isResult} />
+      <ThreadsShareButton text={text} isResult={isResult} />
+      <NativeShareButton text={text} isResult={isResult} />
     </div>
   );
 };
