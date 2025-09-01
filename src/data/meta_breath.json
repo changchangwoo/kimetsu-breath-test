@@ -1,0 +1,69 @@
+{
+  "breathMetadata": {
+    "water": {
+      "title": "물의 호흡 계승자",
+      "description": "차분하고 유연한 마음을 가진 물의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_water.webp"
+    },
+    "fire": {
+      "title": "화염의 호흡 계승자",
+      "description": "뜨거운 열정과 강인한 의지를 가진 화염의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_fire.webp"
+    },
+    "love": {
+      "title": "사랑의 호흡 계승자",
+      "description": "따뜻한 마음과 감정을 소중히 여기는 사랑의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_love.webp"
+    },
+    "mist": {
+      "title": "안개의 호흡 계승자",
+      "description": "섬세하고 신비로운 매력을 가진 안개의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_mist.webp"
+    },
+    "wind": {
+      "title": "바람의 호흡 계승자",
+      "description": "자유롭고 날렵한 움직임을 가진 바람의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_wind.webp"
+    },
+    "beast": {
+      "title": "짐승의 호흡 계승자",
+      "description": "강력한 본능과 용기를 가진 짐승의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_beast.webp"
+    },
+    "rock": {
+      "title": "바위의 호흡 계승자",
+      "description": "튼튼하고 흔들림 없는 의지를 가진 바위의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_rock.webp"
+    },
+    "insect": {
+      "title": "벌레의 호흡 계승자",
+      "description": "민첩하고 예리한 감각을 가진 벌레의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_insect.webp"
+    },
+    "thunder": {
+      "title": "번개의 호흡 계승자",
+      "description": "빠른 판단력과 순발력을 가진 번개의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_thunder.webp"
+    },
+    "flower": {
+      "title": "꽃의 호흡 계승자",
+      "description": "섬세하고 우아한 감각을 가진 꽃의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_flower.webp"
+    },
+    "sound": {
+      "title": "소리의 호흡 계승자",
+      "description": "감각적이고 리듬감 있는 움직임을 가진 소리의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_sound.webp"
+    },
+    "snake": {
+      "title": "뱀의 호흡 계승자",
+      "description": "유연하고 은밀한 전략을 가진 뱀의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_snake.webp"
+    },
+    "sun": {
+      "title": "해의 호흡 계승자",
+      "description": "밝고 강력한 에너지를 가진 해의 호흡 계승자입니다!",
+      "ogImage": "/imgs/OG_sun.webp"
+    }
+  }
+}

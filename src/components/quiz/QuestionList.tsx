@@ -36,7 +36,6 @@ export default function QuestionList({ scripts }: QuestionListProps) {
 
   const currentScript = scripts[step - 1];
 
-  // 이게 가장 확실함
   useEffect(() => {
     if (currentScript.id < scripts.length) {
       const img = new Image();
@@ -107,8 +106,11 @@ export default function QuestionList({ scripts }: QuestionListProps) {
       try {
         const result = await fetchData(`/results`, 'POST', { weights });
         const type = result.type as string;
+        const id = result.id as string;
         const href = `/results/${type}`;
         localStorage.setItem('weights', JSON.stringify(weights));
+        localStorage.setItem('id', JSON.stringify(id));
+        localStorage.setItem('type', JSON.stringify(type));
         triggerTransition(() => {
           router.push(href);
         });
