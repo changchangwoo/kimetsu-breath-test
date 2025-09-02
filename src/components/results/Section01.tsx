@@ -38,7 +38,7 @@ export function Section01({
 
       <BottomUp delay={(delay += step)}>
         <div
-          className="w-full h-[40dvh] 
+          className="w-full h-[40vh] 
         rounded-2xl relative overflow-hidden mt-12"
         >
           <Image

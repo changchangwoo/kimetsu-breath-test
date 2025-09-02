@@ -9,7 +9,7 @@ export const breathingColors: Record<Ttypes, string> = {
   beast: 'rgba(127, 142, 155, 0.7)', // 짐승 - 청회색
   rock: 'rgba(98, 105, 115, 0.7)', // 바위 - 딥 그레이
   insect: 'rgba(111, 101, 196, 0.6)', // 벌레 - 톤다운 라벤더
-  thunder: 'rgba(184, 144, 0, 0.6)', // 번개 - 딥 앰버
+  thunder: 'rgba(255, 204, 0, 0.7)', // 번개 - 젠이츠 딥 옐로우
   flower: 'rgba(203, 134, 166, 0.7)', // 꽃 - 톤다운 핑크
   sound: 'rgba(175, 106, 13, 0.7)', // 소리 - 다크 앰버
   snake: 'rgba(126, 100, 161, 0.6)', // 뱀 - 딥 퍼플

@@ -18,7 +18,7 @@ export function ResultContent({
     <>
       <section
         ref={section01Ref}
-        className="w-full h-dvh flex flex-col items-center px-5"
+        className="w-full h-screen flex flex-col items-center px-5"
       >
         {firstSection}
       </section>
