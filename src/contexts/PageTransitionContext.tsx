@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { usePathname } from "next/navigation";
-import React, {
+import { usePathname } from 'next/navigation';
+import {
   createContext,
-  useContext,
-  useState,
   ReactNode,
+  useContext,
   useEffect,
-} from "react";
+  useState,
+} from 'react';
 
 interface PageTransitionContextType {
   isTransitioning: boolean;
@@ -46,7 +46,7 @@ export function PageTransitionProvider({ children }: { children: ReactNode }) {
 export function usePageTransition() {
   const context = useContext(PageTransitionContext);
   if (context === undefined) {
-    throw new Error("컨텍스트 없음");
+    throw new Error('컨텍스트 없음');
   }
   return context;
 }

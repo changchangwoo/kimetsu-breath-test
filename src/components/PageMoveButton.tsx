@@ -5,7 +5,7 @@ import { usePageTransition } from '@/contexts/PageTransitionContext';
 import { useRouter } from 'next/navigation';
 
 interface PageMoveButtonProps {
-  href: '' | '/quiz';
+  href: '/' | '/quiz';
   title: string;
   answers?: AnswersType[];
   className?: string;

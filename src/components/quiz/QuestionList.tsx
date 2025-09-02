@@ -107,8 +107,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
         const result = await fetchData(`/results`, 'POST', { weights });
         const type = result.type as string;
         const id = result.id as string;
-        const href = `/results/${type}`;
-        localStorage.setItem('weights', JSON.stringify(weights));
+        const href = `/results/${type}?id=${id}`;
         localStorage.setItem('id', JSON.stringify(id));
         localStorage.setItem('type', JSON.stringify(type));
         triggerTransition(() => {

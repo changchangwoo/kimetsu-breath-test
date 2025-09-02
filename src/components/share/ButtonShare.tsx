@@ -11,13 +11,13 @@ interface ShareButtonProps {
 }
 
 export const XShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== 'undefined' ? window.location.href : '',
+  url,
   text = '이 페이지를 확인해보세요!',
   className = '',
 }) => {
   const handleShare = () => {
     const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-      url
+      url!
     )}&text=${encodeURIComponent(text)}`;
     window.open(shareUrl, '_blank', 'width=600,height=400');
   };
@@ -45,7 +45,7 @@ export const XShareButton: React.FC<ShareButtonProps> = ({
 };
 
 export const ThreadsShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== 'undefined' ? window.location.href : '',
+  url,
   text = '이 페이지를 확인해보세요!',
   className = '',
 }) => {
@@ -68,7 +68,7 @@ export const ThreadsShareButton: React.FC<ShareButtonProps> = ({
 };
 
 export const NativeShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== 'undefined' ? window.location.href : '',
+  url,
   text = '이 페이지를 확인해보세요!',
   className = '',
 }) => {
@@ -132,11 +132,15 @@ const ButtonShare: React.FC<{
   isResult = false,
 }) => {
   let newUrl = url;
-  if (isResult) {
+  if (isResult && typeof window !== 'undefined') {
     let type = localStorage.getItem('type');
-    if (type) {
+    let id = localStorage.getItem('id');
+
+    if (type && id) {
+      type = JSON.parse(type);
+      id = JSON.parse(id);
       const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-      newUrl = `${baseUrl}/share/${type}`;
+      newUrl = `${baseUrl}/results/${type}/index.html?id=${id}`;
     }
   }
   return (

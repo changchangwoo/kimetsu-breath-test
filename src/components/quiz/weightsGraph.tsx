@@ -1,15 +1,14 @@
-"use client";
+'use client';
 
 import {
-  RadarChart,
-  PolarGrid,
   PolarAngleAxis,
-  PolarRadiusAxis,
+  PolarGrid,
   Radar,
+  RadarChart,
   ResponsiveContainer,
-} from "recharts";
+} from 'recharts';
 
-interface WeightData {
+export interface WeightData {
   침착?: number;
   협력?: number;
   신중?: number;
@@ -28,22 +27,20 @@ interface ChartDataPoint {
   fullMark: 20;
 }
 
-export default function WeightGraph() {
-  const weights: WeightData =
-    typeof window !== "undefined"
-      ? JSON.parse(localStorage.getItem("weights") || "{}")
-      : {};
+interface WeightGraphProps {
+  weights: WeightData;
+}
 
-  // 데이터를 Recharts가 요구하는 형식으로 변환
+export default function WeightGraph({ weights }: WeightGraphProps) {
   const chartData: ChartDataPoint[] = [
-    { subject: "결단", value: weights.결단 ?? 0, fullMark: 20 },
-    { subject: "공격", value: weights.공격 ?? 0, fullMark: 20 },
-    { subject: "신중", value: weights.신중 ?? 0, fullMark: 20 },
-    { subject: "열정", value: weights.열정 ?? 0, fullMark: 20 },
-    { subject: "창의", value: weights.창의 ?? 0, fullMark: 20 },
-    { subject: "침착", value: weights.침착 ?? 0, fullMark: 20 },
-    { subject: "헌신", value: weights.헌신 ?? 0, fullMark: 20 },
-    { subject: "협력", value: weights.협력 ?? 0, fullMark: 20 },
+    { subject: '결단', value: weights.결단 ?? 0, fullMark: 20 },
+    { subject: '공격', value: weights.공격 ?? 0, fullMark: 20 },
+    { subject: '신중', value: weights.신중 ?? 0, fullMark: 20 },
+    { subject: '열정', value: weights.열정 ?? 0, fullMark: 20 },
+    { subject: '창의', value: weights.창의 ?? 0, fullMark: 20 },
+    { subject: '침착', value: weights.침착 ?? 0, fullMark: 20 },
+    { subject: '헌신', value: weights.헌신 ?? 0, fullMark: 20 },
+    { subject: '협력', value: weights.협력 ?? 0, fullMark: 20 },
   ];
 
   return (
@@ -53,18 +50,8 @@ export default function WeightGraph() {
           <PolarGrid />
           <PolarAngleAxis
             dataKey="subject"
-            tick={{ fill: "#ffffff", fontSize: 17, fontWeight: 500 }}
+            tick={{ fill: '#ffffff', fontSize: 17, fontWeight: 500 }}
           />
-          <PolarAngleAxis
-            dataKey="subject"
-            tick={{
-              fill: "#ffffff",
-              fontSize: 17,
-              fontWeight: 500,
-              dy: 0, // y축 방향으로 10px 아래로 이동
-            }}
-          />
-
           <Radar
             name="능력치"
             dataKey="value"

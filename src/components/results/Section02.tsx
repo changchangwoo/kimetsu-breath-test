@@ -1,11 +1,10 @@
 import { TBreathingDetails, Ttypes } from '@/models/type';
 import { FaGithub } from 'react-icons/fa';
 import { FaPencil } from 'react-icons/fa6';
+import PageMoveButton from '../PageMoveButton';
 import ButtonShare from '../share/ButtonShare';
 import { ResultHeader } from './ResultHeader';
 import { ResultSuccessor } from './ResultSuccessor';
-
-// 호흡 타입별 캐릭터 데이터
 
 interface Section02Props {
   breathingColor: string;
@@ -37,6 +36,11 @@ export function Section02({
       <ResultKeywords keywords={keywords} />
       <ResultSuccessor breathingName={breathingName} type={type} />
       <ResultShare />
+      <PageMoveButton
+        href={'/'}
+        title={'테스트 다시하기'}
+        className="m-auto font-shilla text-large"
+      />
       <Footer />
     </div>
   );
@@ -108,7 +112,7 @@ export function Footer() {
         <FaPencil />
         velog.io/@changwoo
       </a>{' '}
-      <h3 className="text-extraSmall text-lightGray/40 font-nanum leading-tight text-center mt-10">
+      <h3 className="text-extraSmall text-lightGray/40 font-nanum leading-tight text-center mt-5">
         모든 설정 및 저작권은 ‘귀멸의 칼날’ 원작자에 귀속되며,
         <br />
         비영리로서 오직 팬 활동 목적으로만 운영됩니다.
