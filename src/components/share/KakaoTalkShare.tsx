@@ -1,23 +1,33 @@
 'use client';
 
 import Script from 'next/script';
+import metaBreathData from '@/data/meta_breath.json';
 
 const KakaoShareButton = ({
-  title = '딸기 치즈 케익',
-  description = '#케익 #딸기 #삼평동 #카페 #분위기 #소개팅',
-  imageUrl = 'http://k.kakaocdn.net/dn/Q2iNx/btqgeRgV54P/VLdBs9cvyn8BJXB3o7N8UK/kakaolink40_original.webp',
-  webUrl = 'https://developers.kakao.com',
-  mobileWebUrl = 'https://developers.kakao.com',
-  likeCount = 286,
-  commentCount = 45,
-  sharedCount = 845,
-  buttonText = '웹으로 보기',
-  appButtonText = '앱으로 보기',
+  title = '귀멸의 칼날 호흡 테스트 - 나는 어떤 호흡의 계승자일까?',
+  description = '귀멸의 칼날 세계관에서 귀살대 대원이 되어, 어울리는 호흡의 계승자를 찾아보는 성향 테스트 #귀멸의칼날 #전집중호흡 #성향테스트',
+  imageUrl = '/imgs/og/OG_02.webp',
+  buttonText = '테스트 하기',
   url = '',
-  isResult = false,
-  text = '',
+  type = '',
 }) => {
   const KAKAO_JAVASCRIPT_KEY = process.env.NEXT_PUBLIC_API_KAKAO_SHARE;
+
+  // type이 있으면 해당하는 메타데이터 사용, 없으면 기본값 사용
+  const getShareContent = () => {
+    if (type && metaBreathData.breathMetadata[type as keyof typeof metaBreathData.breathMetadata]) {
+      const breathData = metaBreathData.breathMetadata[type as keyof typeof metaBreathData.breathMetadata];
+      return {
+        title: breathData.title,
+        description: breathData.description,
+        imageUrl: breathData.ogImage,
+        buttonText: "나도 테스트 하기"
+      };
+    }
+    return { title, description, imageUrl };
+  };
+
+  const shareContent = getShareContent();
 
   const initKakaoShare = () => {
     if (window.Kakao && !window.Kakao.isInitialized()) {
@@ -29,32 +39,21 @@ const KakaoShareButton = ({
         container: '#kakaotalk-sharing-btn',
         objectType: 'feed',
         content: {
-          title,
-          description,
-          imageUrl,
+          title: shareContent.title,
+          description: shareContent.description,
+          imageUrl: shareContent.imageUrl,
           link: {
-            mobileWebUrl,
-            webUrl,
+            mobileWebUrl : url,
+            webUrl : url,
           },
         },
-        social: {
-          likeCount,
-          commentCount,
-          sharedCount,
-        },
+
         buttons: [
           {
             title: buttonText,
             link: {
-              mobileWebUrl,
-              webUrl,
-            },
-          },
-          {
-            title: appButtonText,
-            link: {
-              mobileWebUrl,
-              webUrl,
+              webUrl : url,
+              mobileWebUrl : url,
             },
           },
         ],

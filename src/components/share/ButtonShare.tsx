@@ -132,6 +132,9 @@ const ButtonShare: React.FC<{
   isResult = false,
 }) => {
   let newUrl = url;
+  let kakaoUrl = url;
+  let kakaoType: string | null = null;
+  
   if (isResult && typeof window !== 'undefined') {
     let type = localStorage.getItem('type');
     let id = localStorage.getItem('id');
@@ -141,11 +144,19 @@ const ButtonShare: React.FC<{
       id = JSON.parse(id);
       const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
       newUrl = `${baseUrl}/results/${type}/index.html?id=${id}`;
+      
+      // 카카오톡 공유용 URL과 타입 설정
+      kakaoUrl = newUrl;
+      kakaoType = type;
     }
   }
+  
   return (
     <div className="flex gap-2 justify-center">
-      <KakaoShareButton url={newUrl} text={text} />
+      <KakaoShareButton 
+        url={kakaoUrl} 
+        type={kakaoType || ''}
+      />
       <XShareButton url={newUrl} text={text} />
       <ThreadsShareButton url={newUrl} text={text} />
       <NativeShareButton url={newUrl} text={text} />
