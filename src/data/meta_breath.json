@@ -1,0 +1,69 @@
+{
+  "breathMetadata": {
+    "water": {
+      "title": "물의 호흡 계승자",
+      "description": "침착하고 유연한 사고로 상황을 객관적으로 판단합니다. 부드럽지만 강한 힘으로 조화를 이룹니다.",
+      "ogImage": "/imgs/og/OG_water.webp"
+    },
+    "fire": {
+      "title": "화염의 호흡 계승자",
+      "description": "타오르는 열정과 추진력으로 목표를 향해 나아갑니다. 뜨거운 에너지로 주변을 고무하지만, 성급할 때도 있습니다.",
+      "ogImage": "/imgs/og/OG_fire.webp"
+    },
+    "love": {
+      "title": "사랑의 호흡 계승자",
+      "description": "따뜻한 마음으로 타인을 보살피는 치유자. 깊은 공감과 포용력으로 주변을 변화시킵니다.",
+      "ogImage": "/imgs/og/OG_love.webp"
+    },
+    "mist": {
+      "title": "안개의 호흡 계승자",
+      "description": "조용하고 신비로운 관찰자. 내면의 강한 의지로 결정적인 순간에 힘을 발휘합니다.",
+      "ogImage": "/imgs/og/OG_mist.webp"
+    },
+    "wind": {
+      "title": "바람의 호흡 계승자",
+      "description": "자유로운 모험가로, 빠른 판단과 도전정신으로 새로운 가능성을 열어갑니다.",
+      "ogImage": "/imgs/og/OG_wind.webp"
+    },
+    "beast": {
+      "title": "짐승의 호흡 계승자",
+      "description": "강인한 본능과 충성심을 지닌 전투자. 솔직하고 직감적인 성격으로 단순하지만 강한 힘을 발휘합니다.",
+      "ogImage": "/imgs/og/OG_beast.webp"
+    },
+    "rock": {
+      "title": "바위의 호흡 계승자",
+      "description": "흔들림 없는 의지와 책임감을 지닌 든든한 존재. 안정적인 힘으로 신뢰를 줍니다.",
+      "ogImage": "/imgs/og/OG_rock.webp"
+    },
+    "insect": {
+      "title": "벌레의 호흡 계승자",
+      "description": "섬세한 관찰력과 분석력으로 문제의 핵심을 파악합니다. 창의적이고 치밀한 해결사입니다.",
+      "ogImage": "/imgs/og/OG_insect.webp"
+    },
+    "thunder": {
+      "title": "번개의 호흡 계승자",
+      "description": "민첩함과 결단력으로 순간을 지배합니다. 빠른 판단으로 위기를 돌파하지만 성급할 때도 있습니다.",
+      "ogImage": "/imgs/og/OG_thunder.webp"
+    },
+    "flower": {
+      "title": "꽃의 호흡 계승자",
+      "description": "조화와 협력을 중시하는 따뜻한 중재자. 풍부한 감성과 예술적 감각을 지녔습니다.",
+      "ogImage": "/imgs/og/OG_flower.webp"
+    },
+    "sound": {
+      "title": "소리의 호흡 계승자",
+      "description": "창의적이고 화려한 개성의 소유자. 자유롭고 열정적인 표현으로 새로운 길을 개척합니다.",
+      "ogImage": "/imgs/og/OG_sound.webp"
+    },
+    "snake": {
+      "title": "뱀의 호흡 계승자",
+      "description": "신비롭고 창의적인 해결사. 침착하고 독창적인 사고로 예상치 못한 힘을 발휘합니다.",
+      "ogImage": "/imgs/og/OG_snake.webp"
+    },
+    "sun": {
+      "title": "해의 호흡 계승자",
+      "description": "모든 호흡의 원점이자 최강의 힘을 지닌 리더. 강인한 의지로 시련을 극복하고 주변에 희망과 용기를 전합니다.",
+      "ogImage": "/imgs/og/OG_sun.webp"
+    }
+  }
+}

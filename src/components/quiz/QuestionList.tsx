@@ -37,6 +37,13 @@ export default function QuestionList({ scripts }: QuestionListProps) {
   const currentScript = scripts[step - 1];
 
   useEffect(() => {
+    if (currentScript.id < scripts.length) {
+      const img = new Image();
+      img.src = `/imgs/q${currentScript.id + 1}.webp`;
+    }
+  }, [currentScript.id]);
+
+  useEffect(() => {
     window.history.replaceState({ step }, '');
 
     const onPopState = (event: PopStateEvent) => {
@@ -99,8 +106,10 @@ export default function QuestionList({ scripts }: QuestionListProps) {
       try {
         const result = await fetchData(`/results`, 'POST', { weights });
         const type = result.type as string;
-        const href = `/results/${type}`;
-        localStorage.setItem('weights', JSON.stringify(weights));
+        const id = result.id as string;
+        const href = `/results/${type}?id=${id}`;
+        localStorage.setItem('id', JSON.stringify(id));
+        localStorage.setItem('type', JSON.stringify(type));
         triggerTransition(() => {
           router.push(href);
         });
@@ -110,16 +119,8 @@ export default function QuestionList({ scripts }: QuestionListProps) {
     }
   };
 
-  const handlePrevButton = () => {
-    if (step > 1) {
-      const newStep = step - 1;
-      setStep(newStep);
-      pushStepToHistory(newStep); // 뒤로 가기 버튼으로도 상태 반영
-    }
-  };
-
   return (
-    <div className="w-full h-dvh flex flex-col justify-center items-center py-5 sm:py-10 ">
+    <div className="w-full h-screen flex flex-col justify-center items-center py-5 sm:py-10 ">
       <ProgressBar step={step} maxStep={scripts.length} />
       <AnimatePresence mode="wait">
         <QuestionStep

@@ -14,7 +14,7 @@ export default async function Home() {
         className="
     px-4 sm:px-5
     py-12 sm:py-20
-    h-dvh flex flex-col text-center items-center
+    h-screen flex flex-col text-center items-center
     justify-center"
       >
         <BottomUp delay={delay}>

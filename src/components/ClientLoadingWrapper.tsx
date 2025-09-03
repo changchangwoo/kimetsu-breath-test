@@ -79,7 +79,6 @@ export default function ClientLoadingWrapper({
   }, []);
 
   useEffect(() => {
-    console.log(fontsLoaded, imagesLoaded);
     if (fontsLoaded && imagesLoaded) {
       const timer = setTimeout(() => {
         setIsLoading(false);

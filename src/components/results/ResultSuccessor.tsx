@@ -27,7 +27,7 @@ export function ResultSuccessor({ breathingName, type }: ResultSuccessorProps) {
   const currentCharacter = characters[currentIndex];
 
   return (
-    <div className="bg-white/15 backdrop-blur-md w-full flex flex-col items-center rounded-xl py-5 min-h-56 border border-border/20">
+    <div className="mt-5 bg-white/15 backdrop-blur-md w-full flex flex-col items-center rounded-xl py-5 min-h-56 border border-border/20">
       <h1 className="text-white font-shilla text-extraLarge mb-5">
         {breathingName}의 호흡 사용자
       </h1>

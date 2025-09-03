@@ -1,13 +1,10 @@
 import { TBreathingDetails, Ttypes } from '@/models/type';
 import { FaGithub } from 'react-icons/fa';
 import { FaPencil } from 'react-icons/fa6';
+import PageMoveButton from '../PageMoveButton';
 import ButtonShare from '../share/ButtonShare';
 import { ResultHeader } from './ResultHeader';
 import { ResultSuccessor } from './ResultSuccessor';
-
-const css_subTitle = '';
-
-// 호흡 타입별 캐릭터 데이터
 
 interface Section02Props {
   breathingColor: string;
@@ -28,7 +25,7 @@ export function Section02({
   const isSmall = ['sun', 'insect', 'love', 'snake', 'flower'].includes(type);
   return (
     <div
-      className={`w-full py-10 px-5  h-auto flex flex-col gap-10`}
+      className={`w-full py-20 px-5  h-auto flex flex-col`}
       style={{ backgroundColor: breathingColor }}
     >
       <ResultHeader
@@ -39,6 +36,11 @@ export function Section02({
       <ResultKeywords keywords={keywords} />
       <ResultSuccessor breathingName={breathingName} type={type} />
       <ResultShare />
+      <PageMoveButton
+        href={'/'}
+        title={'테스트 다시하기'}
+        className="mt-5 m-auto font-shilla text-large border-white"
+      />
       <Footer />
     </div>
   );
@@ -51,7 +53,7 @@ interface ResultDescriptionProps {
 export function ResultDescription({ description }: ResultDescriptionProps) {
   return (
     <div
-      className="text-medium w-full flex flex-col gap-2 h-auto py-5 px-5 bg-white/15 backdrop-blur-md items-center rounded-xl
+      className="mt-5 text-medium w-full flex flex-col gap-2 h-auto py-5 px-5 bg-white/15 backdrop-blur-md items-center rounded-xl
     font-nanumB whitespace-pre-line line tracking-wide text-white
     border-border/20 border"
     >
@@ -66,7 +68,7 @@ interface ResultKeywordsProps {
 
 export function ResultKeywords({ keywords }: ResultKeywordsProps) {
   return (
-    <div className="w-full flex flex-col items-center rounded-xl py-5 ">
+    <div className="mt-5 w-full flex flex-col items-center rounded-xl py-5 ">
       <h1 className="text-white font-shilla text-extraLarge mb-2">키워드</h1>
       <div className="px-3 flex gap-2 flex-wrap justify-center">
         {keywords.map((keyword, index) => (
@@ -84,7 +86,7 @@ export function ResultKeywords({ keywords }: ResultKeywordsProps) {
 
 export function ResultShare() {
   return (
-    <div className=" w-full flex flex-col items-center rounded-xl py-5 justify-center">
+    <div className="mt-10 w-full flex flex-col items-center rounded-xl py-5 justify-center">
       <h1 className="text-white font-shilla text-extraLarge mb-5 text-center">
         결과 공유하기
       </h1>
@@ -95,7 +97,7 @@ export function ResultShare() {
 
 export function Footer() {
   return (
-    <footer className="text-extraSmall w-full flex flex-col items-center justify-center font-nanum text-lightGray/40">
+    <footer className="mt-10 text-extraSmall w-full flex flex-col items-center justify-center font-nanum text-lightGray/40">
       <a
         href="https://github.com/changchangwoo/kimetsu-breath-test"
         className="flex items-center gap-2"
@@ -110,7 +112,7 @@ export function Footer() {
         <FaPencil />
         velog.io/@changwoo
       </a>{' '}
-      <h3 className="text-extraSmall text-lightGray/40 font-nanum leading-tight text-center mt-2">
+      <h3 className="text-extraSmall text-lightGray/40 font-nanum leading-tight text-center mt-5">
         모든 설정 및 저작권은 ‘귀멸의 칼날’ 원작자에 귀속되며,
         <br />
         비영리로서 오직 팬 활동 목적으로만 운영됩니다.

@@ -30,7 +30,7 @@ export function Section01({
       <BottomUp delay={(delay += step)}>
         <h1
           style={{ color: breathingColor }}
-          className="font-bold font-shilla sm:text-extraTitle text-title"
+          className="font-bold font-shilla  text-extraTitle"
         >
           {breathingName}의 호흡
         </h1>
@@ -38,7 +38,7 @@ export function Section01({
 
       <BottomUp delay={(delay += step)}>
         <div
-          className="w-full h-[40dvh] 
+          className="w-full h-[40vh] 
         rounded-2xl relative overflow-hidden mt-12"
         >
           <Image

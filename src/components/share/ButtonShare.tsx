@@ -1,23 +1,23 @@
 'use client';
 
 import React, { useEffect, useState } from 'react';
+import { BsThreads } from 'react-icons/bs';
 import KakaoShareButton from './KakaoTalkShare';
 
 interface ShareButtonProps {
   url?: string;
   text?: string;
   className?: string;
-  isResult?: boolean;
 }
 
 export const XShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== 'undefined' ? window.location.href : '',
+  url,
   text = '이 페이지를 확인해보세요!',
   className = '',
 }) => {
   const handleShare = () => {
     const shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(
-      url
+      url!
     )}&text=${encodeURIComponent(text)}`;
     window.open(shareUrl, '_blank', 'width=600,height=400');
   };
@@ -45,7 +45,7 @@ export const XShareButton: React.FC<ShareButtonProps> = ({
 };
 
 export const ThreadsShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== 'undefined' ? window.location.href : '',
+  url,
   text = '이 페이지를 확인해보세요!',
   className = '',
 }) => {
@@ -61,12 +61,14 @@ export const ThreadsShareButton: React.FC<ShareButtonProps> = ({
       onClick={handleShare}
       className={`hover:scale-105 cursor-pointer bg-white w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-gray-100 transition-colors ${className}`}
       aria-label="Threads에 공유하기"
-    ></button>
+    >
+      <BsThreads />
+    </button>
   );
 };
 
 export const NativeShareButton: React.FC<ShareButtonProps> = ({
-  url = typeof window !== 'undefined' ? window.location.href : '',
+  url,
   text = '이 페이지를 확인해보세요!',
   className = '',
 }) => {
@@ -129,12 +131,35 @@ const ButtonShare: React.FC<{
   text = '이 페이지를 확인해보세요!',
   isResult = false,
 }) => {
+  let newUrl = url;
+  let kakaoUrl = url;
+  let kakaoType: string | null = null;
+  
+  if (isResult && typeof window !== 'undefined') {
+    let type = localStorage.getItem('type');
+    let id = localStorage.getItem('id');
+
+    if (type && id) {
+      type = JSON.parse(type);
+      id = JSON.parse(id);
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+      newUrl = `${baseUrl}/results/${type}/index.html?id=${id}`;
+      
+      // 카카오톡 공유용 URL과 타입 설정
+      kakaoUrl = newUrl;
+      kakaoType = type;
+    }
+  }
+  
   return (
     <div className="flex gap-2 justify-center">
-      <KakaoShareButton />
-      <XShareButton url={url} text={text} isResult={isResult} />
-      <ThreadsShareButton url={url} text={text} isResult={isResult} />
-      <NativeShareButton url={url} text={text} isResult={isResult} />
+      <KakaoShareButton 
+        url={kakaoUrl} 
+        type={kakaoType || ''}
+      />
+      <XShareButton url={newUrl} text={text} />
+      <ThreadsShareButton url={newUrl} text={text} />
+      <NativeShareButton url={newUrl} text={text} />
     </div>
   );
 };
