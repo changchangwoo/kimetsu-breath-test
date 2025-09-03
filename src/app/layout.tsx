@@ -1,10 +1,11 @@
 import ClientLoadingWrapper from '@/components/ClientLoadingWrapper';
-import { metadata } from '@/constants/Metadata';
+import { metadata as siteMetdata } from '@/constants/Metadata';
 import { PageTransitionProvider } from '@/contexts/PageTransitionContext';
+import { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
 
-export { metadata };
+export const metadata: Metadata = siteMetdata;
 
 export default function RootLayout({
   children,

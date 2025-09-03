@@ -38,20 +38,20 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'ko_KR',
-    url: 'https://kimetsu-breath-test',
+    url: 'https://kimetsu-breath-test.site',
     title: '귀멸의 칼날 호흡 성향 테스트 - 나는 어떤 호흡의 계승자일까?',
     description:
       '귀멸의 칼날 세계관에서 귀살대 대원이 되어 당신만의 호흡을 찾아보세요! 선택지를 통해 당신에게 어울리는 호흡의 계승자를 알아보는 성향 테스트입니다.',
     siteName: '귀멸의 칼날 호흡 성향 테스트',
     images: [
       {
-        url: 'https://kimetsu-breath-test/imgs/OG_01.webp',
+        url: 'https://kimetsu-breath-test.site/imgs/og/OG_01.webp',
         width: 1200,
         height: 630,
         alt: '귀멸의 칼날 호흡 성향 테스트',
       },
       {
-        url: 'https://kimetsu-breath-test/imgs/OG_02.webp',
+        url: 'https://kimetsu-breath-test.site/imgs/og/OG_02.webp',
         width: 800,
         height: 800,
         alt: '귀멸의 칼날 호흡 성향 테스트',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     title: '귀멸의 칼날 호흡 성향 테스트 - 나는 어떤 호흡의 계승자일까?',
     description:
       '귀멸의 칼날 세계관에서 당신에게 어울리는 호흡의 계승자를 찾아보세요!',
-    images: ['https://your-domain.com/imgs/OG_01.webp'],
+    images: ['https://kimetsu-breath-test.site/imgs/og/OG_01.webp'],
     creator: '@your_twitter_handle',
   },
 
@@ -82,9 +82,9 @@ export const metadata: Metadata = {
   },
 
   alternates: {
-    canonical: 'https://kimetsu-breath-test',
+    canonical: 'https://kimetsu-breath-test.site',
     languages: {
-      'ko-KR': 'https://kimetsu-breath-test',
+      'ko-KR': 'https://kimetsu-breath-test.site',
     },
   },
 

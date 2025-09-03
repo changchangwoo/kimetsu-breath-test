@@ -51,8 +51,8 @@ export default function ClientLoadingWrapper({
     const checkImages = () => {
       const criticalImages = [
         '/imgs/bg.webp',
-        '/imgs/OG_01.webp',
-        '/imgs/OG_02.webp',
+        '/imgs/og/OG_01.webp',
+        '/imgs/og/OG_02.webp',
       ];
 
       const imagePromises = criticalImages.map(src => {
