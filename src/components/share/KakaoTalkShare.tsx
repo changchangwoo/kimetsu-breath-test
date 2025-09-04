@@ -1,7 +1,7 @@
 'use client';
 
-import Script from 'next/script';
 import metaBreathData from '@/data/meta_breath.json';
+import Script from 'next/script';
 
 const KakaoShareButton = ({
   title = '귀멸의 칼날 호흡 테스트 - 나는 어떤 호흡의 계승자일까?',
@@ -15,13 +15,21 @@ const KakaoShareButton = ({
 
   // type이 있으면 해당하는 메타데이터 사용, 없으면 기본값 사용
   const getShareContent = () => {
-    if (type && metaBreathData.breathMetadata[type as keyof typeof metaBreathData.breathMetadata]) {
-      const breathData = metaBreathData.breathMetadata[type as keyof typeof metaBreathData.breathMetadata];
+    if (
+      type &&
+      metaBreathData.breathMetadata[
+        type as keyof typeof metaBreathData.breathMetadata
+      ]
+    ) {
+      const breathData =
+        metaBreathData.breathMetadata[
+          type as keyof typeof metaBreathData.breathMetadata
+        ];
       return {
         title: breathData.title,
         description: breathData.description,
-        imageUrl: breathData.ogImage,
-        buttonText: "나도 테스트 하기"
+        imageUrl: breathData.ogImage2,
+        buttonText: '나도 테스트 하기',
       };
     }
     return { title, description, imageUrl };
@@ -43,8 +51,8 @@ const KakaoShareButton = ({
           description: shareContent.description,
           imageUrl: shareContent.imageUrl,
           link: {
-            mobileWebUrl : url,
-            webUrl : url,
+            mobileWebUrl: url,
+            webUrl: url,
           },
         },
 
@@ -52,8 +60,8 @@ const KakaoShareButton = ({
           {
             title: buttonText,
             link: {
-              webUrl : url,
-              mobileWebUrl : url,
+              webUrl: url,
+              mobileWebUrl: url,
             },
           },
         ],
