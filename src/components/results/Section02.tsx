@@ -39,7 +39,7 @@ export function Section02({
       <PageMoveButton
         href={'/'}
         title={'테스트 다시하기'}
-        className="mt-5 m-auto font-shilla text-large border-white"
+        className="mt-5 m-auto font-shilla text-large border-white cursor-pointer hover:scale-105 active:scale-105 transition-all"
       />
       <Footer />
     </div>

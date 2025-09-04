@@ -19,12 +19,7 @@ export default function RootLayout({
         <meta name="msapplication-TileColor" content="#1a1a2e" />
 
         {/* 파비콘 */}
-        <link
-          rel="icon"
-          href="/imgs/favicon.ico"
-          sizes="256x256"
-          type="image/png"
-        />
+        <link rel="icon" href="/imgs/ficon.ico" type="image/x-icon" />
 
         {/* <link rel="manifest" href="/manifest.json" /> */}
 

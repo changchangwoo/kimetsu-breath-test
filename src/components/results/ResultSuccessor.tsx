@@ -36,7 +36,7 @@ export function ResultSuccessor({ breathingName, type }: ResultSuccessorProps) {
         {/* 이전 버튼 */}
         <button
           onClick={prevImage}
-          className="absolute z-10 left-10 backdrop-blur-2xl bg-white/10 text-white rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300 hover:w-10 hover:h-10 hover:bg-white/30 hover:text-white active:scale-105 active:bg-white/50 cursor-pointer"
+          className="absolute z-10 left-10 backdrop-blur-2xl bg-white/10 text-white rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300  hover:bg-white/30 hover:text-white active:scale-105 active:bg-white/50 cursor-pointer"
           aria-label="이전 이미지"
         >
           <span className="text-large font-shilla flex items-center justify-center">{`<`}</span>
@@ -78,7 +78,7 @@ export function ResultSuccessor({ breathingName, type }: ResultSuccessorProps) {
         {/* 다음 버튼 */}
         <button
           onClick={nextImage}
-          className="absolute z-10 right-10 backdrop-blur-2xl bg-white/10 text-white rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300 hover:w-10 hover:h-10 hover:bg-white/30 hover:text-white active:scale-105 active:bg-white/50 cursor-pointer"
+          className="absolute z-10 right-10 backdrop-blur-2xl bg-white/10 text-white rounded-full w-8 h-8 flex items-center justify-center transition-all duration-300  hover:bg-white/30 hover:text-white active:scale-105 active:bg-white/50 cursor-pointer"
           aria-label="다음 이미지"
         >
           <span className="text-large font-shilla flex items-center justify-center">{`>`}</span>

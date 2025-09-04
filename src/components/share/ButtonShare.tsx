@@ -25,7 +25,7 @@ export const XShareButton: React.FC<ShareButtonProps> = ({
   return (
     <button
       onClick={handleShare}
-      className={`hover:scale-105 cursor-pointer bg-black w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-gray-800 transition-colors ${className}`}
+      className={`transition-all hover:scale-105 cursor-pointer bg-black w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-gray-800 ${className}`}
       aria-label="X(트위터)에 공유하기"
     >
       <svg
@@ -59,7 +59,7 @@ export const ThreadsShareButton: React.FC<ShareButtonProps> = ({
   return (
     <button
       onClick={handleShare}
-      className={`hover:scale-105 cursor-pointer bg-white w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-gray-100 transition-colors ${className}`}
+      className={`transition-all hover:scale-105 cursor-pointer bg-white w-9 h-9 rounded-full border border-border flex items-center justify-center hover:bg-gray-100 ${className}`}
       aria-label="Threads에 공유하기"
     >
       <BsThreads />
@@ -103,7 +103,7 @@ export const NativeShareButton: React.FC<ShareButtonProps> = ({
   return (
     <button
       onClick={handleShare}
-      className={`hover:scale-105 cursor-pointer bg-lightGray/20 w-9 h-9 rounded-full border border-border flex items-center justify-center transition-colors ${className}`}
+      className={`transition-all hover:scale-105 cursor-pointer bg-lightGray/20 w-9 h-9 rounded-full border border-border flex items-center justify-center ${className}`}
       aria-label="브라우저 공유하기"
     >
       <svg
@@ -134,7 +134,7 @@ const ButtonShare: React.FC<{
   let newUrl = url;
   let kakaoUrl = url;
   let kakaoType: string | null = null;
-  
+
   if (isResult && typeof window !== 'undefined') {
     let type = localStorage.getItem('type');
     let id = localStorage.getItem('id');
@@ -144,19 +144,16 @@ const ButtonShare: React.FC<{
       id = JSON.parse(id);
       const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
       newUrl = `${baseUrl}/results/${type}/index.html?id=${id}`;
-      
+
       // 카카오톡 공유용 URL과 타입 설정
       kakaoUrl = newUrl;
       kakaoType = type;
     }
   }
-  
+
   return (
     <div className="flex gap-2 justify-center">
-      <KakaoShareButton 
-        url={kakaoUrl} 
-        type={kakaoType || ''}
-      />
+      <KakaoShareButton url={kakaoUrl} type={kakaoType || ''} />
       <XShareButton url={newUrl} text={text} />
       <ThreadsShareButton url={newUrl} text={text} />
       <NativeShareButton url={newUrl} text={text} />
