@@ -18,7 +18,7 @@ export function ResultContent({
     <div className="max-w-[512px] overflow-y-auto h-svh no-scrollbar">
       <section
         ref={section01Ref}
-        className="w-full h-svh flex flex-col items-center px-5 "
+        className="w-full h-svh flex flex-col justify-center px-5 "
       >
         {firstSection}
       </section>

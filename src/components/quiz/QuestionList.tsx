@@ -120,10 +120,7 @@ export default function QuestionList({ scripts }: QuestionListProps) {
   };
 
   return (
-    <div
-      className="flex flex-col w-full h-svh justify-center items-center
-    px-5"
-    >
+    <div className="flex flex-col w-full h-svh justify-center items-center">
       <ProgressBar step={step} maxStep={scripts.length} />
       <AnimatePresence mode="wait">
         <QuestionStep

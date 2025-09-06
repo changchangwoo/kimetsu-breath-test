@@ -22,11 +22,16 @@ export function Section02({
   const { title, summary, description, strengths, weaknesses, keywords } =
     breathingDetail;
 
-  const isSmall = ['sun', 'insect', 'love', 'snake', 'flower'].includes(type);
+  const isSmall = ['sun', 'insect', 'love', 'snake', 'flower', 'wind'].includes(
+    type
+  );
   return (
     <div
       className={`w-full py-20 px-5  h-auto flex flex-col`}
-      style={{ backgroundColor: breathingColor }}
+      style={{
+        backgroundColor: breathingColor,
+        paddingBottom: `calc(5rem + env(safe-area-inset-bottom))`,
+      }}
     >
       <ResultHeader
         summary={summary}

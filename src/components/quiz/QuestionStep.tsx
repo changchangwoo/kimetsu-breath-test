@@ -83,8 +83,8 @@ const QuestionStep = ({
             >
               <li
                 className={`flex items-center justify-center border rounded-2xl
-                  w-full
-                  mx-auto
+                w-[90%]
+                mx-auto
                 cursor-pointer transition-all hover:scale-105 font-nanumB text-center
                  text-white py-2 whitespace-pre-line text-descript
                  bg-lightGray/20 border-border/50

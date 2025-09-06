@@ -20,7 +20,7 @@ export function Section01({
     <>
       <BottomUp delay={delay}>
         <h2
-          className="mt-16 sm:mt-32 font-shilla text-lightGray sm:text-extraLarge
+          className="font-shilla text-lightGray sm:text-extraLarge
         text-large"
         >
           내가 계승한 호흡은..
@@ -38,13 +38,13 @@ export function Section01({
 
       <BottomUp delay={(delay += step)}>
         <div
-          className="w-full h-[40vh] 
+          className="w-full h-64 
         rounded-2xl relative overflow-hidden mt-12"
         >
           <Image
             src={`/imgs/result/${type}.webp`}
             alt={`${breathingName}의 결과 이미지`}
-            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
+            sizes="(max-width: 768px) 100svw, (min-width: 769px) 50svh"
             fill
             className="object-cover relative"
             priority

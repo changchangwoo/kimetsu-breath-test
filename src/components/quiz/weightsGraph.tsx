@@ -44,7 +44,7 @@ export default function WeightGraph({ weights }: WeightGraphProps) {
   ];
 
   return (
-    <div className="w-full h-96 font-shilla text-lightGray">
+    <div className="w-full h-96 font-shilla text-lightGray pointer-events-none">
       <ResponsiveContainer width="100%" height="100%">
         <RadarChart cx="50%" cy="50%" outerRadius="80%" data={chartData}>
           <PolarGrid />
