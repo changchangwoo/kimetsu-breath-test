@@ -15,6 +15,10 @@ export default function RootLayout({
   return (
     <html lang="ko">
       <head>
+        <meta
+          name="google-site-verification"
+          content="KpRqFbzphIDpvvusUAuXfWbYPg455M8q0eizKQPCOsw"
+        />
         <meta name="theme-color" content="#1a1a2e" />
         <meta name="msapplication-TileColor" content="#1a1a2e" />
 
