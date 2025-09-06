@@ -25,7 +25,7 @@ export default function PageTransition({
   return (
     <>
       <motion.div
-        className="w-full overscroll-y-none"
+        className="w-full h-full overscroll-y-none"
         variants={itemVariants}
         initial="initial"
         animate={isTransitioning ? 'exit' : 'initial'}

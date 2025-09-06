@@ -50,20 +50,23 @@ export default function RootLayout({
         />
       </head>
 
-      <body className="relative min-h-screen max-w-[400px] m-auto ">
-        <div className="fixed inset-0 bg-[url('/imgs/bg.webp')] bg-repeat bg-auto -z-10" />
+      <body
+        className="relative h-svh w-svw 
+      flex
+      flex-col
+      justify-center
+      items-center
+      bg-[url('/imgs/bg.webp')] bg-repeat bg-auto overscroll-none overflow-hidden"
+      >
+        <Script
+          src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
+          type="module"
+          strategy="beforeInteractive"
+        />
 
-        <div className="relative z-10">
-          <Script
-            src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
-            type="module"
-            strategy="beforeInteractive"
-          />
-
-          <ClientLoadingWrapper>
-            <PageTransitionProvider>{children}</PageTransitionProvider>
-          </ClientLoadingWrapper>
-        </div>
+        <ClientLoadingWrapper>
+          <PageTransitionProvider>{children}</PageTransitionProvider>
+        </ClientLoadingWrapper>
       </body>
     </html>
   );

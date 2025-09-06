@@ -13,7 +13,6 @@ const KakaoShareButton = ({
 }) => {
   const KAKAO_JAVASCRIPT_KEY = process.env.NEXT_PUBLIC_API_KAKAO_SHARE;
 
-  // type이 있으면 해당하는 메타데이터 사용, 없으면 기본값 사용
   const getShareContent = () => {
     if (
       type &&
@@ -82,6 +81,9 @@ const KakaoShareButton = ({
         id="kakaotalk-sharing-btn"
         className="kakao-share-button"
         type="button"
+        onClick={() => {
+          console.log('터치');
+        }}
       >
         <img
           src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"

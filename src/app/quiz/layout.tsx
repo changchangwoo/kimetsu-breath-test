@@ -4,7 +4,11 @@ export default function QuizLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <div>
+    <div
+      className="overflow-hidden
+    w-full
+    max-w-[512px]"
+    >
       <div>{children}</div>
     </div>
   );

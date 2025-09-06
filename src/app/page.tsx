@@ -14,7 +14,8 @@ export default async function Home() {
         className="
     px-4 sm:px-5
     py-12 sm:py-20
-    h-screen flex flex-col text-center items-center
+    max-w-[512px]
+    flex flex-col text-center items-center
     justify-center"
       >
         <BottomUp delay={delay}>
@@ -25,7 +26,11 @@ export default async function Home() {
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
-          <div className="mb-8 sm:mb-14 w-full max-w-md aspect-[16/7] rounded-md bg-[url('../../public/imgs/main.webp')] bg-cover bg-center"></div>
+          <div
+            className="
+          m-auto
+          mb-8 sm:mb-14 w-full max-w-md aspect-[16/7] rounded-md bg-[url('../../public/imgs/main.webp')] bg-cover bg-center"
+          ></div>
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>

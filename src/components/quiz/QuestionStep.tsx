@@ -50,7 +50,7 @@ const QuestionStep = ({
   });
 
   return (
-    <div className="flex flex-col w-full px-5">
+    <div className="w-full">
       <RightToLeft delay={0.2}>
         <h1 className="min-h-[60px] text-center text-white font-shilla text-large whitespace-pre-line mb-7">
           {script.question}
