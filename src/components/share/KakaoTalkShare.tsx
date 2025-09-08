@@ -7,7 +7,7 @@ import { useEffect, useRef } from 'react';
 const KakaoShareButton = ({
   title = '귀멸의 칼날 호흡 테스트 - 나는 어떤 호흡의 계승자일까?',
   description = '귀멸의 칼날 세계관에서 귀살대 대원이 되어 내 호흡을 찾아보세요! #귀멸의칼날 #전집중호흡 #성향테스트',
-  imageUrl = '/imgs/og/OG_02.webp',
+  imageUrl = 'https://kimetsu-breath-test.site/imgs/og/OG_02.webp',
   buttonText = '테스트 하기',
   url = '',
   type = '',
