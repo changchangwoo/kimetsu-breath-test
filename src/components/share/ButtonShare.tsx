@@ -12,7 +12,7 @@ interface ShareButtonProps {
 
 export const XShareButton: React.FC<ShareButtonProps> = ({
   url,
-  text = '이 페이지를 확인해보세요!',
+  text = '귀멸의 칼날 호흡 성향 테스트',
   className = '',
 }) => {
   const handleShare = () => {
@@ -46,7 +46,7 @@ export const XShareButton: React.FC<ShareButtonProps> = ({
 
 export const ThreadsShareButton: React.FC<ShareButtonProps> = ({
   url,
-  text = '이 페이지를 확인해보세요!',
+  text = '귀멸의 칼날 호흡 성향 테스트',
   className = '',
 }) => {
   const handleShare = () => {
@@ -69,7 +69,7 @@ export const ThreadsShareButton: React.FC<ShareButtonProps> = ({
 
 export const NativeShareButton: React.FC<ShareButtonProps> = ({
   url,
-  text = '이 페이지를 확인해보세요!',
+  text = '귀멸의 칼날 호흡 성향 테스트',
   className = '',
 }) => {
   const [isSupported, setIsSupported] = useState(false);
@@ -128,7 +128,7 @@ const ButtonShare: React.FC<{
   isResult?: boolean;
 }> = ({
   url = typeof window !== 'undefined' ? window.location.href : '',
-  text = '이 페이지를 확인해보세요!',
+  text = '귀멸의 칼날 호흡 성향 테스트',
   isResult = false,
 }) => {
   let newUrl = url;
