@@ -2,17 +2,17 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: {
-    template: '%s | 귀멸의 칼날 호흡 성향 테스트',
-    default: '귀멸의 칼날 호흡 성향 테스트 - 나는 어떤 호흡의 계승자일까?',
+    template: '%s | 귀멸의 칼날 호흡 테스트',
+    default: '귀멸의 칼날 호흡 테스트 - 나는 어떤 호흡의 계승자일까?',
   },
   description:
-    '귀멸의 칼날 세계관에서 귀살대 대원이 되어 당신만의 호흡을 찾아보세요! 선택지를 통해 화염의 호흡, 물의 호흡, 번개의 호흡 등 당신에게 어울리는 호흡의 계승자를 알아보는 성향 테스트입니다.',
+    '귀멸의 칼날 세계관에서 귀살대 대원이 되어 당신만의 호흡을 찾아보세요! 선택지를 통해 화염의 호흡, 물의 호흡, 번개의 호흡 등 당신에게 어울리는 호흡의 계승자를 알아보는 테스트입니다.',
   keywords: [
     '귀멸의 칼날',
     '귀멸의 칼날 테스트',
-    '귀멸 성향 테스트',
+    '귀멸 테스트',
     '호흡 테스트',
-    '성향 테스트',
+    '성형 테스트',
     '귀살대',
     '화염의 호흡',
     '물의 호흡',
@@ -39,22 +39,22 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'ko_KR',
     url: 'https://kimetsu-breath-test.site',
-    title: '귀멸의 칼날 호흡 성향 테스트 - 나는 어떤 호흡의 계승자일까?',
+    title: '귀멸의 칼날 호흡 테스트 - 나는 어떤 호흡의 계승자일까?',
     description:
-      '귀멸의 칼날 세계관에서 귀살대 대원이 되어 당신만의 호흡을 찾아보세요! 선택지를 통해 당신에게 어울리는 호흡의 계승자를 알아보는 성향 테스트입니다.',
-    siteName: '귀멸의 칼날 호흡 성향 테스트',
+      '귀멸의 칼날 세계관에서 귀살대 대원이 되어 당신만의 호흡을 찾아보세요! 선택지를 통해 당신에게 어울리는 호흡의 계승자를 알아보는 테스트입니다.',
+    siteName: '귀멸의 칼날 호흡 테스트',
     images: [
       {
         url: 'https://kimetsu-breath-test.site/imgs/og/OG_01.webp',
         width: 1200,
         height: 630,
-        alt: '귀멸의 칼날 호흡 성향 테스트',
+        alt: '귀멸의 칼날 호흡 테스트',
       },
       {
         url: 'https://kimetsu-breath-test.site/imgs/og/OG_02.webp',
         width: 800,
         height: 800,
-        alt: '귀멸의 칼날 호흡 성향 테스트',
+        alt: '귀멸의 칼날 호흡 테스트',
       },
     ],
   },
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
   // Twitter
   twitter: {
     card: 'summary_large_image',
-    title: '귀멸의 칼날 호흡 성향 테스트 - 나는 어떤 호흡의 계승자일까?',
+    title: '귀멸의 칼날 호흡 테스트 - 나는 어떤 호흡의 계승자일까?',
     description:
       '귀멸의 칼날 세계관에서 귀살대가 되어 당신에게 어울리는 호흡을 찾아보세요!',
     images: ['https://kimetsu-breath-test.site/imgs/og/OG_01.webp'],
