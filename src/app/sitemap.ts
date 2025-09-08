@@ -1,6 +1,8 @@
 import { breathingNames } from '@/constants/breathingColors';
 import { MetadataRoute } from 'next';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://kimetsu-breath-test.site';
 
