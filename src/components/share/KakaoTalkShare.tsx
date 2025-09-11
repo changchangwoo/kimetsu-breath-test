@@ -2,16 +2,19 @@
 
 import metaBreathData from '@/data/meta_breath.json';
 import Script from 'next/script';
+import { useEffect, useRef } from 'react';
 
 const KakaoShareButton = ({
   title = '귀멸의 칼날 호흡 테스트 - 나는 어떤 호흡의 계승자일까?',
-  description = '귀멸의 칼날 세계관에서 귀살대 대원이 되어, 어울리는 호흡의 계승자를 찾아보는 테스트 #귀멸의칼날 #전집중호흡 테스트',
-  imageUrl = '/imgs/og/OG_02.webp',
+  description = '귀멸의 칼날 세계관에서 귀살대 대원이 되어 내 호흡을 찾아보세요! #귀멸의칼날 #전집중호흡 #성향테스트',
+  imageUrl = 'https://kimetsu-breath-test.site/imgs/og/OG_02.webp',
   buttonText = '테스트 하기',
   url = '',
   type = '',
 }) => {
   const KAKAO_JAVASCRIPT_KEY = process.env.NEXT_PUBLIC_API_KAKAO_SHARE;
+  const buttonRef = useRef<HTMLButtonElement>(null);
+  const isInitializedRef = useRef(false);
 
   const getShareContent = () => {
     if (
@@ -37,36 +40,72 @@ const KakaoShareButton = ({
   const shareContent = getShareContent();
 
   const initKakaoShare = () => {
-    if (window.Kakao && !window.Kakao.isInitialized()) {
+    if (!window.Kakao) return;
+
+    if (!window.Kakao.isInitialized()) {
       window.Kakao.init(KAKAO_JAVASCRIPT_KEY!);
     }
 
-    if (window.Kakao && window.Kakao.Share) {
-      window.Kakao.Share.createDefaultButton({
-        container: '#kakaotalk-sharing-btn',
-        objectType: 'feed',
-        content: {
-          title: shareContent.title,
-          description: shareContent.description,
-          imageUrl: shareContent.imageUrl,
-          link: {
-            mobileWebUrl: url,
-            webUrl: url,
-          },
-        },
+    const container = document.getElementById('kakaotalk-sharing-btn');
+    if (container && window.Kakao.Share && !isInitializedRef.current) {
+      container.innerHTML = `
+        <img
+          src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+          alt="카카오톡 공유 보내기 버튼"
+          width="36"
+          height="36"
+          class="rounded-full"
+        />
+      `;
 
-        buttons: [
-          {
-            title: buttonText,
+      try {
+        window.Kakao.Share.createDefaultButton({
+          container: '#kakaotalk-sharing-btn',
+          objectType: 'feed',
+          content: {
+            title: shareContent.title,
+            description: shareContent.description,
+            imageUrl: shareContent.imageUrl,
             link: {
-              webUrl: url,
               mobileWebUrl: url,
+              webUrl: url,
             },
           },
-        ],
-      });
+          buttons: [
+            {
+              title: buttonText,
+              link: {
+                webUrl: url,
+                mobileWebUrl: url,
+              },
+            },
+          ],
+        });
+        isInitializedRef.current = true;
+      } catch (error) {
+        console.error('Kakao Share 버튼 초기화 실패:', error);
+      }
     }
   };
+
+  useEffect(() => {
+    if (window.Kakao && window.Kakao.Share) {
+      isInitializedRef.current = false;
+      initKakaoShare();
+    }
+  }, [
+    url,
+    type,
+    shareContent.title,
+    shareContent.description,
+    shareContent.imageUrl,
+  ]);
+
+  useEffect(() => {
+    return () => {
+      isInitializedRef.current = false;
+    };
+  }, []);
 
   return (
     <>
@@ -78,12 +117,10 @@ const KakaoShareButton = ({
         strategy="afterInteractive"
       />
       <button
+        ref={buttonRef}
         id="kakaotalk-sharing-btn"
         className="kakao-share-button"
         type="button"
-        onClick={() => {
-          console.log('터치');
-        }}
       >
         <img
           src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"

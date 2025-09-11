@@ -36,7 +36,7 @@ export default function RootLayout({
               '@type': 'WebApplication',
               name: '귀멸의 칼날 호흡 테스트',
               description:
-                '귀멸의 칼날 세계관에서 당신에게 어울리는 호흡의 계승자를 찾아보는 테스트',
+                '귀멸의 칼날 세계관에서 귀살대 대원이 되어 당신에게 어울리는 호흡을 찾아보세요',
               url: 'https://kimetsu-breath-test',
               applicationCategory: 'Entertainment',
               operatingSystem: 'Any',

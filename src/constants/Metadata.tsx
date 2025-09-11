@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: '귀멸의 칼날 호흡 테스트 - 나는 어떤 호흡의 계승자일까?',
     description:
-      '귀멸의 칼날 세계관에서 귀살대가 되어 당신에게 어울리는 호흡의 계승자를 찾아보세요!',
+      '귀멸의 칼날 세계관에서 귀살대가 되어 당신에게 어울리는 호흡을 찾아보세요!',
     images: ['https://kimetsu-breath-test.site/imgs/og/OG_01.webp'],
     creator: '@your_twitter_handle',
   },
