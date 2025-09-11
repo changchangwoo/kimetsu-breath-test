@@ -42,7 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       url: currentUrl,
       title: breathData.title,
       description: breathData.description,
-      siteName: '귀멸의 칼날 호흡 성향 테스트',
+      siteName: '귀멸의 칼날 호흡 테스트',
       images: [
         {
           url: `${baseUrl}/${breathData.ogImage}`,

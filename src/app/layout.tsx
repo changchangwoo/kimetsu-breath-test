@@ -34,9 +34,9 @@ export default function RootLayout({
             __html: JSON.stringify({
               '@context': 'https://schema.org',
               '@type': 'WebApplication',
-              name: '귀멸의 칼날 호흡 성향 테스트',
+              name: '귀멸의 칼날 호흡 테스트',
               description:
-                '귀멸의 칼날 세계관에서 당신에게 어울리는 호흡의 계승자를 찾아보는 성향 테스트',
+                '귀멸의 칼날 세계관에서 당신에게 어울리는 호흡의 계승자를 찾아보는 테스트',
               url: 'https://kimetsu-breath-test',
               applicationCategory: 'Entertainment',
               operatingSystem: 'Any',
