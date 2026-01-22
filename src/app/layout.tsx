@@ -21,12 +21,30 @@ export default function RootLayout({
         <meta name="theme-color" content="#1a1a2e" />
         <meta name="msapplication-TileColor" content="#1a1a2e" />
 
+        <link
+          rel="preconnect"
+          href="https://cdn.jsdelivr.net"
+          crossOrigin="anonymous"
+        />
+        <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="anonymous"
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap"
+          rel="stylesheet"
+        />
+
         {/* 파비콘 */}
         <link rel="icon" href="/imgs/ficon.ico" type="image/x-icon" />
 
         {/* <link rel="manifest" href="/manifest.json" /> */}
 
         <link rel="preload" href="/imgs/bg.webp" as="image" />
+        <link rel="preload" href="/imgs/main.webp" as="image" />
         <link
           rel="preload"
           href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/Shilla_CultureB-Bold.woff2"

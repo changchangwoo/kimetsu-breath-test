@@ -9,26 +9,6 @@
     scrollbar-width: none;
   }
 }
-/* ----------------------------
-   폰트 정의
----------------------------- */
-@font-face {
-  font-family: 'nanum';
-  font-weight: 700;
-  src: url('https://cdn.jsdelivr.net/gh/wizfile/font/NanumMyeongjo.woff')
-    format('woff');
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'nanumB';
-  font-weight: 800;
-  src: url('https://cdn.jsdelivr.net/gh/wizfile/font/NanumMyeongjo.woff')
-    format('woff');
-  font-style: normal;
-  font-display: swap;
-}
 
 @font-face {
   font-family: 'shilla';
@@ -43,8 +23,8 @@
 ---------------------------- */
 @theme {
   /* 폰트 설정 */
-  --font-nanum: 'nanum', sans-serif;
-  --font-nanumB: 'nanumB', sans-serif;
+  --font-nanum: 'Nanum Myeongjo', serif;
+  --font-nanumB: 'Nanum Myeongjo', serif;
   --font-shilla: 'shilla', sans-serif;
 
   /* 색상 */
