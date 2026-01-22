@@ -3,6 +3,7 @@ import { PageTransitionProvider } from '@/contexts/PageTransitionContext';
 import { Metadata } from 'next';
 import Script from 'next/script';
 import './globals.css';
+import { nanumMyeongjo } from './fonts';
 
 export const metadata: Metadata = siteMetdata;
 
@@ -12,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="ko">
+    <html lang="ko" className={nanumMyeongjo.variable}>
       <head>
         <meta
           name="google-site-verification"
@@ -27,16 +28,6 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin="anonymous"
-        />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700;800&display=swap"
-          rel="stylesheet"
-        />
 
         {/* 파비콘 */}
         <link rel="icon" href="/imgs/ficon.ico" type="image/x-icon" />

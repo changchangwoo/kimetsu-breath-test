@@ -22,9 +22,9 @@
    CSS 변수 정의
 ---------------------------- */
 @theme {
-  /* 폰트 설정 */
-  --font-nanum: 'Nanum Myeongjo', serif;
-  --font-nanumB: 'Nanum Myeongjo', serif;
+  /* 폰트 설정 - next/font CSS 변수 사용 */
+  --font-nanum: var(--font-nanum-myeongjo), serif;
+  --font-nanumB: var(--font-nanum-myeongjo), serif;
   --font-shilla: 'shilla', sans-serif;
 
   /* 색상 */

@@ -32,6 +32,13 @@ interface KakaoShareOptions {
   buttons?: KakaoShareButton[];
 }
 
+interface KakaoShareSendOptions {
+  objectType: "feed" | "list" | "location" | "commerce" | "text";
+  content: KakaoShareContent;
+  social?: KakaoShareSocial;
+  buttons?: KakaoShareButton[];
+}
+
 interface KakaoShare {
   createDefaultButton: (options: KakaoShareOptions) => void;
   createCustomButton: (options: KakaoShareOptions) => void;
@@ -39,6 +46,7 @@ interface KakaoShare {
     container: string;
     requestUrl: string;
   }) => void;
+  sendDefault: (options: KakaoShareSendOptions) => void;
 }
 
 interface KakaoAuth {
