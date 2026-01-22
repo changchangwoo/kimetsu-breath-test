@@ -1,7 +1,6 @@
 import { metadata as siteMetdata } from '@/constants/Metadata';
 import { PageTransitionProvider } from '@/contexts/PageTransitionContext';
 import { Metadata } from 'next';
-import Script from 'next/script';
 import './globals.css';
 import { nanumMyeongjo } from './fonts';
 
@@ -70,18 +69,13 @@ export default function RootLayout({
       </head>
 
       <body
-        className="relative h-svh w-svw 
+        className="relative h-svh w-svw
       flex
       flex-col
       justify-center
       items-center
-      bg-[url('/imgs/bg.webp')] bg-repeat bg-auto overscroll-none overflow-hidden"
+      bg-[#0B080D] bg-[url('/imgs/bg.webp')] bg-repeat bg-auto overscroll-none overflow-hidden"
       >
-        <Script
-          src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
-          type="module"
-          strategy="lazyOnload"
-        />
         <div className={`transition-all duration-700 ease-out`}>
           <PageTransitionProvider>{children}</PageTransitionProvider>
         </div>
