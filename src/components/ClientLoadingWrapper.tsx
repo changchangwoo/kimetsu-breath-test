@@ -8,19 +8,6 @@ interface ClientLoadingWrapperProps {
 }
 
 const LoadingScreen = () => {
-  const [dots, setDots] = useState('');
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setDots(prev => {
-        if (prev === '...') return '';
-        return prev + '.';
-      });
-    }, 500); // 0.5초마다 점 추가
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
     <LoadingItem>
       <div className="fixed inset-0 flex items-center justify-center overflow-y-hidden">

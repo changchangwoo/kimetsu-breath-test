@@ -51,7 +51,7 @@ export function ResultSuccessor({ breathingName, type }: ResultSuccessorProps) {
                   src={currentCharacter.image}
                   alt={`${currentCharacter.name}의 이미지`}
                   fill
-                  sizes="100%"
+                  sizes="150px"
                   className="object-cover relative"
                   priority
                 />

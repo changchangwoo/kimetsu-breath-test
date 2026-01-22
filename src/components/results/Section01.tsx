@@ -44,7 +44,7 @@ export function Section01({
           <Image
             src={`/imgs/result/${type}.webp`}
             alt={`${breathingName}의 결과 이미지`}
-            sizes="(max-width: 768px) 100svw, (min-width: 769px) 50svh"
+            sizes="(max-width: 768px) 100vw, (min-width: 769px) 50vw"
             fill
             className="object-cover relative"
             priority

@@ -3,6 +3,7 @@ import PageTransition from '@/animation/PageTransition';
 import CountUser from '@/components/CountUser';
 import PageMoveButton from '@/components/PageMoveButton';
 import ButtonShare from '@/components/share/ButtonShare';
+import Image from 'next/image';
 
 export default async function Home() {
   let delay = 0.05;
@@ -26,11 +27,16 @@ export default async function Home() {
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
-          <div
-            className="
-          m-auto
-          mb-8 sm:mb-14 w-full max-w-md aspect-[16/7] rounded-md bg-[url('../../public/imgs/main.webp')] bg-cover bg-center"
-          ></div>
+          <div className="m-auto mb-8 sm:mb-14 w-full max-w-md aspect-[16/7] rounded-md overflow-hidden relative">
+            <Image
+              src="/imgs/main.webp"
+              alt="귀멸의 칼날 호흡 성향 테스트"
+              fill
+              className="object-cover object-center"
+              priority
+              sizes="(max-width: 640px) 100vw, 448px"
+            />
+          </div>
         </BottomUp>
 
         <BottomUp delay={(delay += step)}>
