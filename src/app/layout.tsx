@@ -1,4 +1,3 @@
-import ClientLoadingWrapper from '@/components/ClientLoadingWrapper';
 import { metadata as siteMetdata } from '@/constants/Metadata';
 import { PageTransitionProvider } from '@/contexts/PageTransitionContext';
 import { Metadata } from 'next';
@@ -28,6 +27,13 @@ export default function RootLayout({
         {/* <link rel="manifest" href="/manifest.json" /> */}
 
         <link rel="preload" href="/imgs/bg.webp" as="image" />
+        <link
+          rel="preload"
+          href="https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/Shilla_CultureB-Bold.woff2"
+          as="font"
+          type="font/woff2"
+          crossOrigin="anonymous"
+        />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -65,12 +71,11 @@ export default function RootLayout({
         <Script
           src="https://unpkg.com/@lottiefiles/dotlottie-wc@0.6.2/dist/dotlottie-wc.js"
           type="module"
-          strategy="beforeInteractive"
+          strategy="lazyOnload"
         />
-
-        <ClientLoadingWrapper>
+        <div className={`transition-all duration-700 ease-out`}>
           <PageTransitionProvider>{children}</PageTransitionProvider>
-        </ClientLoadingWrapper>
+        </div>
       </body>
     </html>
   );
