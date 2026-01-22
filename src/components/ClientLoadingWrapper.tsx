@@ -22,7 +22,6 @@ export default function ClientLoadingWrapper({
 }: ClientLoadingWrapperProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [fontsLoaded, setFontsLoaded] = useState(false);
-  const [imagesLoaded, setImagesLoaded] = useState(false);
 
   useEffect(() => {
     const checkFonts = async () => {
@@ -35,45 +34,16 @@ export default function ClientLoadingWrapper({
       }
     };
 
-    const checkImages = () => {
-      const criticalImages = [
-        '/imgs/bg.webp',
-        '/imgs/og/OG_01.webp',
-        '/imgs/og/OG_02.webp',
-      ];
-
-      const imagePromises = criticalImages.map(src => {
-        return new Promise<void>(resolve => {
-          const img = new Image();
-          img.onload = () => resolve();
-          img.onerror = () => {
-            console.log(`Failed to load image: ${src}`);
-            resolve();
-          };
-          img.src = src;
-        });
-      });
-
-      Promise.all(imagePromises).then(() => {
-        setImagesLoaded(true);
-      });
-    };
-
     if (typeof window !== 'undefined') {
       checkFonts();
-      checkImages();
     }
   }, []);
 
   useEffect(() => {
-    if (fontsLoaded && imagesLoaded) {
-      const timer = setTimeout(() => {
-        setIsLoading(false);
-      }, 1000);
-
-      return () => clearTimeout(timer);
+    if (fontsLoaded) {
+      setIsLoading(false);
     }
-  }, [fontsLoaded, imagesLoaded]);
+  }, [fontsLoaded]);
 
   return (
     <>
