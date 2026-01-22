@@ -2,8 +2,8 @@ import { metadata as siteMetdata } from '@/constants/Metadata';
 import { PageTransitionProvider } from '@/contexts/PageTransitionContext';
 import { Metadata } from 'next';
 import Script from 'next/script';
-import './globals.css';
 import { nanumMyeongjo } from './fonts';
+import './globals.css';
 
 const GA_ID = 'G-ECBP8FNCNB';
 
@@ -44,12 +44,7 @@ export default function RootLayout({
           crossOrigin="anonymous"
         />
         <link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
-
-        {/* 파비콘 */}
         <link rel="icon" href="/imgs/ficon.ico" type="image/x-icon" />
-
-        {/* <link rel="manifest" href="/manifest.json" /> */}
-
         <link rel="preload" href="/imgs/bg.webp" as="image" />
         <link rel="preload" href="/imgs/main.webp" as="image" />
         <link

@@ -122,7 +122,7 @@ const KakaoShareButton = ({
       onFocus={() => loadKakaoSDK()}
     >
       <img
-        src="https://developers.kakao.com/assets/img/about/logos/kakaotalksharing/kakaotalk_sharing_btn_medium.png"
+        src="/imgs/kakao_share_btn.png"
         alt="카카오톡 공유 보내기 버튼"
         width={36}
         height={36}
